@@ -1,0 +1,446 @@
+/*=========================================================
+    Project Chronogy Website
+    Version 1.0
+=========================================================*/
+
+
+/*=========================
+    GLOBAL
+=========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#000;
+    color:white;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+
+/*=========================
+    WEBSITE CONTAINER
+=========================*/
+
+#site{
+
+    width:100%;
+    max-width:1500px;
+
+    margin:auto;
+
+    background:#000;
+
+}
+
+
+/*=========================
+    HERO
+=========================*/
+
+#hero{
+
+    position:relative;
+
+    width:100%;
+    height:700px;
+
+    background:#1d0030;
+
+    overflow:hidden;
+
+}
+
+
+#heroImage{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+/*=========================
+    TOP LINKS
+=========================*/
+
+#offLinkLeft{
+
+    position:absolute;
+
+    left:20px;
+    top:20px;
+
+    z-index:20;
+
+}
+
+
+#offLinkRight{
+
+    position:absolute;
+
+    right:20px;
+    top:20px;
+
+    z-index:20;
+
+}
+
+
+#offLinkLeft img,
+#offLinkRight img{
+
+    width:170px;
+
+    transition:.25s;
+
+}
+
+
+#offLinkLeft img:hover,
+#offLinkRight img:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+/*=========================
+    CONTENT
+=========================*/
+
+#content{
+
+    background-image:url("images/clocks-background.png");
+
+    background-repeat:repeat;
+
+    padding-bottom:70px;
+
+}
+
+
+
+/*=========================
+    DIVIDER
+=========================*/
+
+.divider{
+
+    height:5px;
+
+    background:#00d8ff;
+
+    margin:0 auto 50px auto;
+
+}
+
+
+
+/*=========================
+    NAVIGATION
+=========================*/
+
+#mainNav{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:45px;
+
+    margin-top:-65px;
+
+    margin-bottom:80px;
+
+    position:relative;
+
+    z-index:100;
+
+}
+
+
+#mainNav img{
+
+    width:150px;
+
+    transition:.25s;
+
+}
+
+
+#mainNav img:hover{
+
+    transform:
+
+        translateY(-8px)
+        scale(1.05);
+
+}
+
+
+
+/*=========================
+    SECTIONS
+=========================*/
+
+section{
+
+    width:92%;
+
+    margin:auto;
+
+    margin-bottom:100px;
+
+}
+
+
+.sectionBanner{
+
+    display:block;
+
+    max-width:520px;
+
+    margin-bottom:40px;
+
+}
+
+
+.leftBanner{
+
+    margin-left:-70px;
+
+}
+
+
+.rightBanner{
+
+    margin-left:auto;
+
+}
+
+
+
+/*=========================
+    ABOUT BOX
+=========================*/
+
+.textBox{
+
+    background:white;
+
+    color:black;
+
+    padding:40px;
+
+    font-size:1.45rem;
+
+    line-height:1.5;
+
+    border-radius:8px;
+
+    box-shadow:
+
+        0 0 25px
+        rgba(0,0,0,.45);
+
+}
+
+
+.textBox p{
+
+    margin-bottom:20px;
+
+}
+
+
+.textBox p:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+
+/*=========================
+    DOWNLOAD
+=========================*/
+
+#downloadButton{
+
+    display:block;
+
+    width:fit-content;
+
+    margin:50px auto;
+
+}
+
+
+#downloadButton img{
+
+    width:520px;
+
+    transition:.25s;
+
+}
+
+
+#downloadButton img:hover{
+
+    transform:scale(1.04);
+
+}
+
+
+
+/*=========================
+    VIDEOS
+=========================*/
+
+#videoGrid{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+}
+
+
+#videoGrid iframe{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    border:none;
+
+    background:#222;
+
+}
+
+
+
+/*=========================
+    FOOTER
+=========================*/
+
+footer{
+
+    display:flex;
+
+    justify-content:space-around;
+
+    gap:40px;
+
+    padding:60px;
+
+    background-image:url("images/clocks-background.png");
+
+    background-repeat:repeat;
+
+}
+
+
+.footerColumn{
+
+    text-align:center;
+
+}
+
+
+.footerColumn h3{
+
+    margin-bottom:25px;
+
+    font-size:1.4rem;
+
+}
+
+
+.footerColumn p{
+
+    margin-bottom:12px;
+
+}
+
+
+
+/*=========================
+    COPYRIGHT
+=========================*/
+
+#copyright{
+
+    background:#d50000;
+
+    color:white;
+
+    padding:18px;
+
+    font-size:1rem;
+
+}
+
+
+
+/*=========================
+    MOBILE
+=========================*/
+
+@media (max-width:1000px){
+
+    #hero{
+
+        height:450px;
+
+    }
+
+    #mainNav{
+
+        flex-wrap:wrap;
+
+        margin-top:20px;
+
+    }
+
+    #videoGrid{
+
+        flex-direction:column;
+
+    }
+
+    footer{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .leftBanner,
+    .rightBanner{
+
+        margin:auto;
+
+    }
+
+}
