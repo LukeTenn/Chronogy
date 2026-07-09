@@ -53,11 +53,14 @@ body{
     position:relative;
 
     width:100%;
-    height:700px;
 
-    background:#1d0030;
+    aspect-ratio:1895 / 990;
+
+    max-height:990px;
 
     overflow:hidden;
+
+    background:#000;
 
 }
 
