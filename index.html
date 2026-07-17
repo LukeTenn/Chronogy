@@ -1,68 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Chronogy™ – Project Version</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project Chronogy™</title>
+
+    <meta name="description"
+          content="Official website for Project Chronogy™, the public development version of the upcoming RPG Chronogy™.">
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-  <!-- Hero Section -->
-  <header id="hero">
-    <img id="heroImage" src="images/header.png" alt="Project Chronogy™">
-  </header>
 
-  <!-- Cyan Divider and Navigation -->
-  <div class="divider">
-    <div class="diamond leftDiamond"></div>
-    <div class="dividerLine"></div>
-    <nav id="mainNav">
-      <a class="navButton" href="story.html">
-        <img class="navImage" src="images/button-story.png" alt="Story">
-        <span>Story</span>
-      </a>
-      <a class="navButton" href="guide.html">
-        <img class="navImage" src="images/button-guide.png" alt="Guide">
-        <span>Guide</span>
-      </a>
-      <a class="navButton" href="music.html">
-        <img class="navImage" src="images/button-music.png" alt="Music">
-        <span>Music</span>
-      </a>
-      <a class="navButton" href="development.html">
-        <img class="navImage" src="images/button-development.png" alt="Development">
-        <span>Dev</span>
-      </a>
+<div id="page">
+
+    <!-- ==========================================
+         HERO
+    =========================================== -->
+
+    <header id="hero">
+
+        <img
+            src="images/header.png"
+            alt="Project Chronogy"
+            id="heroImage">
+
+        <!-- Top Corner Links -->
+
+        <a href="#" class="cornerButton leftCorner">
+
+            Off Link 1
+
+        </a>
+
+        <a href="#" class="cornerButton rightCorner">
+
+            Off Link 2
+
+        </a>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         MAIN NAVIGATION
+    =========================================== -->
+
+    <nav id="mainNavigation">
+
+        <a href="story.html" class="navButton">
+
+            <img
+                src="images/button-story.png"
+                alt="Story">
+
+            <span>Story</span>
+
+        </a>
+
+        <a href="guide.html" class="navButton">
+
+            <img
+                src="images/button-guide.png"
+                alt="Guide">
+
+            <span>Guide</span>
+
+        </a>
+
+        <a href="music.html" class="navButton">
+
+            <img
+                src="images/button-music.png"
+                alt="Music">
+
+            <span>Music</span>
+
+        </a>
+
+        <a href="development.html" class="navButton">
+
+            <img
+                src="images/button-development.png"
+                alt="Development">
+
+            <span>Development</span>
+
+        </a>
+
     </nav>
-    <div class="dividerLine"></div>
-    <div class="diamond rightDiamond"></div>
-  </div>
 
-  <!-- About Section -->
-  <section id="about">
-    <img class="ribbon" src="images/about-ribbon.png" alt="About Chronogy">
-    <div class="panel">
-      <h2>About Chronogy</h2>
-      <p>Chronogy is a role-playing adventure spanning time itself.  In the Project version you can explore early game content and see the core art style.  (Final game features are in development.)</p>
-    </div>
-  </section>
 
-  <!-- Videos Section -->
-  <section id="videos">
-    <img class="ribbon" src="images/videos-ribbon.png" alt="Chronogy Videos">
-    <div class="panel">
-      <h2>Videos</h2>
-      <p>Placeholder for official trailers, dev diaries, and gameplay footage.  Stay tuned for more videos as the project progresses.</p>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footerContent">
-      <p>&copy; 2016&ndash;2026 LukeTenn. All rights reserved.</p>
-      <p>Chronogy&trade; and Project Chronogy&trade; are trademarks of LukeTenn.</p>
-    </div>
-  </footer>
+    <!-- Decorative Divider -->
+
+    <section class="dividerSection">
+
+        <img
+            src="images/divider.png"
+            alt="Divider"
+            class="divider">
+
+    </section>
+
+
+
+    <!-- ==========================================
+         ABOUT
+    =========================================== -->
+
+    <section id="aboutSection">
+
+        <img
+            src="images/ribbon-about.png"
+            alt="About"
+            class="sectionRibbon ribbonLeft">
+
+        <div class="infoPanel">
+
+            <h2>
+
+                Welcome to the official website for
+                <span class="gameName">
+
+                    Project Chronogy™
+
+                </span>
+
+            </h2>
+
+            <p>
+
+                This website serves as the official home of
+                <strong>Project Chronogy™</strong>,
+                the public development version of the upcoming RPG,
+                <strong>Chronogy™</strong>.
+
+            </p>
+
+            <p>
+
+                Here you'll find story information,
+                music,
+                development updates,
+                videos,
+                artwork,
+                and downloadable builds as development continues.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         DOWNLOAD
+    =========================================== -->
+
+    <section id="downloadSection">
+
+        <a href="#">
+
+            <img
+
+                src="images/download-banner.png"
+
+                alt="Download Project Version"
+
+                id="downloadBanner">
+
+        </a>
+
+    </section>
+
+
+
+    <!-- Divider -->
+
+    <section class="dividerSection">
+
+        <img
+
+            src="images/divider.png"
+
+            alt="Divider"
+
+            class="divider">
+
+    </section>
+
+
+
+    <!-- ==========================================
+         VIDEOS
+    =========================================== -->
+
+    <section id="videoSection">
+
+        <img
+
+            src="images/ribbon-videos.png"
+
+            alt="Videos"
+
+            class="sectionRibbon ribbonRight">
+
+
+
+        <div id="videoGrid">
+
+            <div class="videoPlaceholder">
+
+                Video
+
+            </div>
+
+            <div class="videoPlaceholder">
+
+                Video
+
+            </div>
+
+            <div class="videoPlaceholder">
+
+                Video
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Divider -->
+
+    <section class="dividerSection">
+
+        <img
+
+            src="images/divider.png"
+
+            alt="Divider"
+
+            class="divider">
+
+    </section>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <div class="footerColumns">
+
+            <div>
+
+                <h3>Contact Us</h3>
+
+                <p>luketennfilms@gmail.com</p>
+
+                <p>Feedback</p>
+
+            </div>
+
+            <div>
+
+                <h3>Our Partners</h3>
+
+                <p>Creamy's Wonderland</p>
+
+            </div>
+
+            <div>
+
+                <h3>About Us</h3>
+
+                <p>MRB</p>
+
+            </div>
+
+            <div>
+
+                <h3>Follow Us</h3>
+
+                <p>YouTube</p>
+
+                <p>X (Twitter)</p>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="copyright">
+
+            <p>
+
+                © 2016–2026 LukeTenn. All rights reserved.
+
+            </p>
+
+            <p>
+
+                Chronogy™ and Project Chronogy™ are trademarks of LukeTenn.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
