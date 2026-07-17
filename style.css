@@ -1,514 +1,124 @@
-/*=========================================================
-    Project Chronogy Website
-    Version 1.0
-=========================================================*/
+/* Global Styles */
+body {
+  margin: 0;
+  background: #000 url("images/clocks-background.png") repeat;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  line-height: 1.4;
+}
+a { color: inherit; }
 
-
-/*=========================
-    GLOBAL
-=========================*/
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* Hero Banner */
+#hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1895 / 990;  /* Preserve hero image ratio */
+  max-height: 990px;
+  background: #000;
+  overflow: hidden;
+}
+#heroImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-html{
-    scroll-behavior:smooth;
+/* Divider and Navigation */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto; /* space around divider */
+  position: relative;
+}
+.dividerLine {
+  flex: 1;
+  height: 5px;
+  background: #00d8ff;
+}
+.diamond {
+  width: 30px;
+  height: 30px;
+  background: #000;
+  border: 5px solid #00d8ff;
+  transform: rotate(45deg);
+}
+.leftDiamond  { margin-right: 12px; }
+.rightDiamond { margin-left: 12px; }
+
+/* Navigation Buttons */
+#mainNav {
+  display: flex;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+  transform: translateY(-40px); /* Lift nav above the divider line */
+  justify-content: center;
+}
+.navButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.25s;
+}
+.navButton:hover {
+  transform: translateY(-10px) scale(1.1); /* Scale up and lift on hover */
+}
+.navImage {
+  width: 120px;
+  display: block;
+}
+.navButton span {
+  margin-top: 8px;
+  font-size: 1.8rem;
 }
 
-body{
-
-    background:#000;
-    color:white;
-
-    font-family:Arial, Helvetica, sans-serif;
-
+/* About and Videos Sections */
+#about, #videos {
+  position: relative;
+  padding: 100px 0 50px;
+  text-align: center;
+}
+.ribbon {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  position: relative;
+  z-index: 1;
+}
+.panel {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  margin: -20px auto 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+#about .panel {
+  transform: rotate(-2deg);
+}
+#videos .panel {
+  transform: rotate(2deg);
+}
+#about h2, #videos h2 {
+  margin-top: 0;
+  font-size: 2rem;
 }
 
-
-/*=========================
-    WEBSITE CONTAINER
-=========================*/
-
-#site{
-
-    width:100%;
-    max-width:1500px;
-
-    margin:auto;
-
-    background:#000;
-
+/* Footer */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
 }
-
-
-/*=========================
-    HERO
-=========================*/
-
-#hero{
-
-    position:relative;
-
-    width:100%;
-
-    aspect-ratio:1895 / 990;
-
-    max-height:990px;
-
-    overflow:hidden;
-
-    background:#000;
-
-}
-
-
-#heroImage{
-
-    display:block;
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:contain;
-
-}
-
-
-/*=========================
-    TOP LINKS
-=========================*/
-
-#offLinkLeft{
-
-    position:absolute;
-
-    left:20px;
-    top:20px;
-
-    z-index:20;
-
-}
-
-
-#offLinkRight{
-
-    position:absolute;
-
-    right:20px;
-    top:20px;
-
-    z-index:20;
-
-}
-
-
-#offLinkLeft img,
-#offLinkRight img{
-
-    width:170px;
-
-    transition:.25s;
-
-}
-
-
-#offLinkLeft img:hover,
-#offLinkRight img:hover{
-
-    transform:scale(1.05);
-
-}
-
-
-
-/*=========================
-    CONTENT
-=========================*/
-
-#content{
-
-    background-image:url("images/clocks-background.png");
-
-    background-repeat:repeat;
-
-    padding-bottom:70px;
-
-}
-
-
-
-/*=========================
-    DIVIDER
-=========================*/
-
-.divider{
-
-    display:flex;
-
-    align-items:center;
-
-    width:92%;
-
-    margin:auto;
-
-    margin-bottom:60px;
-
-}
-
-.dividerLine{
-
-    flex:1;
-
-    height:5px;
-
-    background:#00d8ff;
-
-}
-
-.diamond{
-
-    width:26px;
-
-    height:26px;
-
-    border:5px solid #00d8ff;
-
-    transform:rotate(45deg);
-
-    background:#000;
-
-}
-
-.leftDiamond{
-
-    margin-right:12px;
-
-}
-
-.rightDiamond{
-
-    margin-left:12px;
-
-}
-
-
-/*=========================
-    NAVIGATION
-=========================*/
-
-#mainNav{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-start;
-
-    gap:55px;
-
-    margin-top:-90px;
-
-    margin-bottom:90px;
-
-    position:relative;
-
-    z-index:100;
-
-}
-
-.navButton{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    text-decoration:none;
-
-    color:white;
-
-    font-weight:bold;
-
-    transition:transform .25s;
-
-}
-
-.navButton:hover{
-
-    transform:
-        translateY(-10px)
-        scale(1.08);
-
-}
-
-.navImage{
-
-    width:150px;
-
-    display:block;
-
-}
-
-.navButton span{
-
-    margin-top:12px;
-
-    font-size:2rem;
-
-}
-
-
-
-/*=========================
-    SECTIONS
-=========================*/
-
-section{
-
-    width:92%;
-
-    margin:auto;
-
-    margin-bottom:100px;
-
-}
-
-
-.sectionBanner{
-
-    display:block;
-
-    max-width:520px;
-
-    margin-bottom:40px;
-
-}
-
-
-.leftBanner{
-
-    margin-left:-70px;
-
-}
-
-
-.rightBanner{
-
-    margin-left:auto;
-
-}
-
-
-
-/*=========================
-    ABOUT BOX
-=========================*/
-
-.textBox{
-
-    background:white;
-
-    color:black;
-
-    padding:40px;
-
-    font-size:1.45rem;
-
-    line-height:1.5;
-
-    border-radius:8px;
-
-    box-shadow:
-
-        0 0 25px
-        rgba(0,0,0,.45);
-
-}
-
-
-.textBox p{
-
-    margin-bottom:20px;
-
-}
-
-
-.textBox p:last-child{
-
-    margin-bottom:0;
-
-}
-
-
-
-/*=========================
-    DOWNLOAD
-=========================*/
-
-#downloadButton{
-
-    display:block;
-
-    width:fit-content;
-
-    margin:50px auto;
-
-}
-
-
-#downloadButton img{
-
-    width:520px;
-
-    transition:.25s;
-
-}
-
-
-#downloadButton img:hover{
-
-    transform:scale(1.04);
-
-}
-
-
-
-/*=========================
-    VIDEOS
-=========================*/
-
-#videoGrid{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:30px;
-
-}
-
-
-#videoGrid iframe{
-
-    width:100%;
-
-    aspect-ratio:16/9;
-
-    border:none;
-
-    background:#222;
-
-}
-
-
-
-/*=========================
-    FOOTER
-=========================*/
-
-footer{
-
-    display:flex;
-
-    justify-content:space-around;
-
-    gap:40px;
-
-    padding:60px;
-
-    background-image:url("images/clocks-background.png");
-
-    background-repeat:repeat;
-
-}
-
-
-.footerColumn{
-
-    text-align:center;
-
-}
-
-
-.footerColumn h3{
-
-    margin-bottom:25px;
-
-    font-size:1.4rem;
-
-}
-
-
-.footerColumn p{
-
-    margin-bottom:12px;
-
-}
-
-
-
-/*=========================
-    COPYRIGHT
-=========================*/
-
-#copyright{
-
-    background:#d50000;
-
-    color:white;
-
-    padding:18px;
-
-    font-size:1rem;
-
-}
-
-
-
-/*=========================
-    MOBILE
-=========================*/
-
-@media (max-width:1000px){
-
-    #hero{
-
-        height:450px;
-
-    }
-
-    #mainNav{
-
-        flex-wrap:wrap;
-
-        margin-top:20px;
-
-    }
-
-    #videoGrid{
-
-        flex-direction:column;
-
-    }
-
-    footer{
-
-        flex-direction:column;
-
-        text-align:center;
-
-    }
-
-    .leftBanner,
-    .rightBanner{
-
-        margin:auto;
-
-    }
-
+.footerContent p {
+  margin: 5px 0;
 }
