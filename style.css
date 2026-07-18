@@ -1,124 +1,630 @@
-/* Global Styles */
+/*==================================================
+    CHRONOGY WEBSITE
+    Version 2.0
+    style.css
+
+    This stylesheet is built directly from the
+    homepage mockup.
+
+    Future pages (Story, Guide, Music,
+    Development) will reuse this stylesheet.
+==================================================*/
+
+
+
+/*==================================================
+    RESET
+==================================================*/
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
 body {
-  margin: 0;
-  background: #000 url("images/clocks-background.png") repeat;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  line-height: 1.4;
-}
-a { color: inherit; }
 
-/* Hero Banner */
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+
+    background-image: url("images/clocks-background.png");
+    background-repeat: repeat-y;
+    background-position: top center;
+    background-color: #111111;
+
+}
+
+
+
+/*==================================================
+    VARIABLES
+==================================================*/
+
+:root {
+
+    --page-width: 1700px;
+
+    --nav-icon-width: 155px;
+
+    --navigation-offset: 170px;
+
+    --divider-spacing: 18px;
+
+    --section-width: 86%;
+
+}
+
+
+
+/*==================================================
+    PAGE
+==================================================*/
+
+#page {
+
+    width: 100%;
+    max-width: var(--page-width);
+
+    margin: 0 auto;
+
+    position: relative;
+
+}
+
+
+
+/*==================================================
+    HERO
+==================================================*/
+
 #hero {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1895 / 990;  /* Preserve hero image ratio */
-  max-height: 990px;
-  background: #000;
-  overflow: hidden;
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: visible;
+
 }
+
 #heroImage {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
 }
 
-/* Divider and Navigation */
-.divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  max-width: 1200px;
-  margin: 40px auto; /* space around divider */
-  position: relative;
-}
-.dividerLine {
-  flex: 1;
-  height: 5px;
-  background: #00d8ff;
-}
-.diamond {
-  width: 30px;
-  height: 30px;
-  background: #000;
-  border: 5px solid #00d8ff;
-  transform: rotate(45deg);
-}
-.leftDiamond  { margin-right: 12px; }
-.rightDiamond { margin-left: 12px; }
 
-/* Navigation Buttons */
-#mainNav {
-  display: flex;
-  gap: 40px;
-  position: relative;
-  z-index: 2;
-  transform: translateY(-40px); /* Lift nav above the divider line */
-  justify-content: center;
+
+/*==================================================
+    TOP CORNER BUTTONS
+==================================================*/
+
+.cornerButton {
+
+    position: absolute;
+
+    top: 18px;
+
+    padding: 12px 20px;
+
+    background: rgba(0,0,0,.45);
+
+    border: 2px solid white;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: .25s;
+
 }
+
+.cornerButton:hover {
+
+    background: rgba(255,255,255,.18);
+
+}
+
+.leftCorner {
+
+    left: 24px;
+
+}
+
+.rightCorner {
+
+    right: 24px;
+
+}
+
+
+
+/*==================================================
+    NAVIGATION
+==================================================*/
+
+/*
+    IMPORTANT
+
+    The navigation intentionally DOES NOT sit
+    perfectly centered.
+
+    It follows the mockup.
+
+*/
+
+#mainNavigation {
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    align-items: flex-start;
+
+    gap: 42px;
+
+    padding-left: var(--navigation-offset);
+
+    margin-top: -46px;
+
+    position: relative;
+
+    z-index: 20;
+
+}
+
+
+
 .navButton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #fff;
-  transition: transform 0.25s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    transition:
+        transform .18s ease,
+        filter .18s ease;
+
 }
+
+
+
 .navButton:hover {
-  transform: translateY(-10px) scale(1.1); /* Scale up and lift on hover */
+
+    transform:
+
+        translateY(-6px)
+
+        scale(1.05);
+
 }
-.navImage {
-  width: 120px;
-  display: block;
+
+
+
+.navButton img {
+
+    width: var(--nav-icon-width);
+
+    height: auto;
+
+    display: block;
+
 }
+
+
+
 .navButton span {
-  margin-top: 8px;
-  font-size: 1.8rem;
+
+    margin-top: 10px;
+
+    font-size: 1.18rem;
+
+    font-weight: bold;
+
+    letter-spacing: .05em;
+
+    text-shadow:
+
+        2px 2px 5px black;
+
 }
 
-/* About and Videos Sections */
-#about, #videos {
-  position: relative;
-  padding: 100px 0 50px;
-  text-align: center;
-}
-.ribbon {
-  display: block;
-  margin: 0 auto;
-  width: 300px;
-  position: relative;
-  z-index: 1;
-}
-.panel {
-  background: #fff;
-  color: #000;
-  padding: 20px;
-  width: 80%;
-  max-width: 800px;
-  margin: -20px auto 0;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-#about .panel {
-  transform: rotate(-2deg);
-}
-#videos .panel {
-  transform: rotate(2deg);
-}
-#about h2, #videos h2 {
-  margin-top: 0;
-  font-size: 2rem;
+
+
+/*==================================================
+    DIVIDER
+==================================================*/
+
+.dividerSection {
+
+    margin-top: var(--divider-spacing);
+
+    margin-bottom: 34px;
+
+    text-align: center;
+
 }
 
-/* Footer */
+
+
+.divider {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+
+
+/*==================================================
+    PLACEHOLDER SECTIONS
+
+    These will receive their full styling
+    in Part 2.
+==================================================*/
+
+#aboutSection,
+#downloadSection,
+#videoSection {
+
+    width: var(--section-width);
+
+    margin: 0 auto 70px auto;
+
+}
+/*==================================================
+    ABOUT SECTION
+==================================================*/
+
+#aboutSection {
+
+    position: relative;
+
+    width: var(--section-width);
+
+    margin: 40px auto 70px auto;
+
+}
+
+
+
+/* About ribbon */
+
+#aboutSection .sectionRibbon {
+
+    position: absolute;
+
+    top: -38px;
+
+    left: 40px;
+
+    z-index: 5;
+
+    display: block;
+
+    max-width: 340px;
+
+    height: auto;
+
+}
+
+
+
+/* White information panel */
+
+#aboutSection .infoPanel {
+
+    background: #F5F5F5;
+
+    color: #222222;
+
+    padding: 65px 55px 45px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 14px 30px rgba(0,0,0,.35);
+
+    transform: rotate(-1deg);
+
+}
+
+#aboutSection h2 {
+
+    margin-bottom: 22px;
+
+    color: #222222;
+
+}
+
+#aboutSection p {
+
+    line-height: 1.75;
+
+    margin-bottom: 18px;
+
+}
+
+
+
+/*==================================================
+    DOWNLOAD SECTION
+==================================================*/
+
+#downloadSection {
+
+    text-align: center;
+
+    margin: 60px auto 80px;
+
+}
+
+#downloadBanner {
+
+    display: inline-block;
+
+    max-width: 420px;
+
+    width: 100%;
+
+    height: auto;
+
+    transition:
+
+        transform .2s ease,
+
+        filter .2s ease;
+
+}
+
+#downloadBanner:hover {
+
+    transform: scale(1.04);
+
+}
+
+
+
+/*==================================================
+    VIDEO SECTION
+==================================================*/
+
+#videoSection {
+
+    position: relative;
+
+    width: var(--section-width);
+
+    margin: 0 auto 70px auto;
+
+}
+
+
+
+/* Videos ribbon */
+
+#videoSection .sectionRibbon {
+
+    position: absolute;
+
+    top: -38px;
+
+    right: 40px;
+
+    z-index: 5;
+
+    display: block;
+
+    max-width: 340px;
+
+    height: auto;
+
+}
+
+
+
+/* Video grid */
+
+#videoGrid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 34px;
+
+    margin-top: 60px;
+
+}
+
+
+
+/* Placeholder until real YouTube videos */
+
+.videoPlaceholder {
+
+    aspect-ratio: 16 / 9;
+
+    background: #252525;
+
+    border: 3px solid #2CC8FF;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1.4rem;
+
+}
+
+
+
+/*==================================================
+    FOOTER
+==================================================*/
+
 footer {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 0.9rem;
+
+    background: rgba(25,25,25,.92);
+
+    padding: 45px 40px 25px;
+
+    margin-top: 60px;
+
 }
-.footerContent p {
-  margin: 5px 0;
+
+.footerColumns {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 35px;
+
+}
+
+.footerColumns h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 1.15rem;
+
+}
+
+.footerColumns p {
+
+    margin-bottom: 8px;
+
+    line-height: 1.6;
+
+}
+
+#copyright {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,.25);
+
+    text-align: center;
+
+    font-size: .95rem;
+
+}
+
+
+
+/*==================================================
+    RESPONSIVE
+==================================================*/
+
+@media (max-width: 1400px) {
+
+    :root {
+
+        --navigation-offset: 120px;
+
+        --nav-icon-width: 135px;
+
+    }
+
+}
+
+@media (max-width: 1100px) {
+
+    #mainNavigation {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        padding-left: 0;
+
+        margin-top: 20px;
+
+        gap: 24px;
+
+    }
+
+    #videoGrid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .footerColumns {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    #aboutSection .sectionRibbon,
+    #videoSection .sectionRibbon {
+
+        position: relative;
+
+        top: 0;
+
+        left: 0;
+
+        right: 0;
+
+        margin-bottom: 20px;
+
+    }
+
+    #aboutSection .infoPanel {
+
+        transform: none;
+
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .footerColumns {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    :root {
+
+        --nav-icon-width: 110px;
+
+    }
+
+    .navButton span {
+
+        font-size: 1rem;
+
+    }
+
 }
