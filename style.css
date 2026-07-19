@@ -36,13 +36,11 @@ body {
 
     color: white;
 
-    background-image: url("images/clocks-background.png");
-    background-repeat: repeat-y;
-    background-position: top center;
     background-color: #111111;
 
-}
+    overflow-x: hidden;
 
+}
 
 
 /*==================================================
@@ -59,7 +57,19 @@ body {
 
     --divider-spacing: 18px;
 
-    --section-width: 86%;
+    -:root {
+
+    --page-width: 1700px;
+
+    --textbox-width: 1380px;
+
+    --video-width: 400px;
+
+    --download-width: 430px;
+
+    --nav-width: 155px;
+
+}
 
 }
 
@@ -71,12 +81,17 @@ body {
 
 #page {
 
+    position: relative;
+
     width: 100%;
     max-width: var(--page-width);
 
     margin: 0 auto;
 
-    position: relative;
+    background-image: url("images/clocks-background.png");
+    background-repeat: repeat-y;
+    background-position: top center;
+    background-size: 100% auto;
 
 }
 
@@ -320,7 +335,7 @@ body {
 
     top: -38px;
 
-    left: 40px;
+    left: 120px;
 
     z-index: 5;
 
@@ -342,7 +357,13 @@ body {
 
     color: #222222;
 
+    width: 1380px;
+
+    min-height: 360px;
+
     padding: 65px 55px 45px;
+
+    margin: 0 auto;
 
     border-radius: 10px;
 
@@ -556,21 +577,6 @@ footer {
 
 }
 
-@media (max-width: 1100px) {
-
-    #mainNavigation {
-
-        justify-content: center;
-
-        flex-wrap: wrap;
-
-        padding-left: 0;
-
-        margin-top: 20px;
-
-        gap: 24px;
-
-    }
 
     #videoGrid {
 
