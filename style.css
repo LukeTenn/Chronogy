@@ -49,7 +49,7 @@ body {
 
 :root {
 
-    --page-width: 1700px;
+    --page-width: 1920px;
 
     --nav-icon-width: 155px;
 
@@ -59,11 +59,11 @@ body {
 
     -:root {
 
-    --page-width: 1700px;
+    --page-width: 1920px;
 
     --textbox-width: 1380px;
 
-    --video-width: 400px;
+    ---width: 400px;
 
     --download-width: 430px;
 
@@ -304,7 +304,7 @@ body {
 
 #aboutSection,
 #downloadSection,
-#videoSection {
+#Section {
 
     width: var(--section-width);
 
@@ -430,7 +430,7 @@ body {
 
 
 /*==================================================
-    VIDEO SECTION
+     SECTION
 ==================================================*/
 
 #videoSection {
@@ -471,13 +471,20 @@ body {
 
 #videoGrid {
 
-    display: grid;
+    display: flex;
 
-    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
 
-    gap: 34px;
+    align-items: flex-start;
+
+    gap: 40px;
 
     margin-top: 60px;
+
+    width: 1380px;
+
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -487,6 +494,8 @@ body {
 
 .videoPlaceholder {
 
+    width: 400px;
+
     aspect-ratio: 16 / 9;
 
     background: #252525;
@@ -495,11 +504,11 @@ body {
 
     display: flex;
 
-    align-items: center;
-
     justify-content: center;
 
-    font-size: 1.4rem;
+    align-items: center;
+
+    flex-shrink: 0;
 
 }
 
