@@ -522,7 +522,7 @@ footer {
 
     background: rgba(25,25,25,.92);
 
-    padding: 45px 40px 25px;
+    padding: 45px 0 25px;
 
     margin-top: 60px;
 
@@ -534,7 +534,13 @@ footer {
 
     grid-template-columns: repeat(4, 1fr);
 
-    gap: 35px;
+    gap: 40px;
+
+    width: 1380px;
+
+    margin: 0 auto;
+
+    align-items: start;
 
 }
 
@@ -593,11 +599,6 @@ footer {
 
     }
 
-    .footerColumns {
-
-        grid-template-columns: repeat(2, 1fr);
-
-    }
 
     #aboutSection .sectionRibbon,
     #videoSection .sectionRibbon {
@@ -624,11 +625,6 @@ footer {
 
 @media (max-width: 700px) {
 
-    .footerColumns {
-
-        grid-template-columns: 1fr;
-
-    }
 
     :root {
 
