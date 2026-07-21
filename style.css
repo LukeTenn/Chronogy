@@ -187,13 +187,15 @@ body {
 
     display: flex;
 
-    justify-content: flex-start;
+    justify-content: flex-end;
 
     align-items: flex-start;
 
     gap: 42px;
 
-    padding-left: var(--navigation-offset);
+    justify-content: center;
+    
+    transform: translateX(140px);
 
     margin-top: -46px;
 
@@ -583,8 +585,6 @@ footer {
 @media (max-width: 1400px) {
 
     :root {
-
-        --navigation-offset: 120px;
 
         --nav-icon-width: 135px;
 
