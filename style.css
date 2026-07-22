@@ -53,7 +53,7 @@ body {
 
     --nav-icon-width: 155px;
 
-    --divider-spacing: 18px;
+    --divider-spacing: 5px;
 
     --textbox-width: 1380px;
 
@@ -181,11 +181,11 @@ body {
 
     align-items: flex-start;
 
-    gap: 42px;
+    gap: 65px;
 
     transform: translateX(140px);
 
-    margin-top: -46px;
+    margin-top: -70px;
 
     position: relative;
 
@@ -263,7 +263,7 @@ body {
 
 .dividerSection {
 
-    margin-top: var(--divider-spacing);
+    margin-top: -25px;
 
     margin-bottom: 34px;
 
