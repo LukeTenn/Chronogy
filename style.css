@@ -331,7 +331,9 @@ body {
 
     display: block;
 
-    max-width: 340px;
+    width: 460px;
+
+    max-width: none;
 
     height: auto;
 
@@ -397,9 +399,9 @@ body {
 
     display: inline-block;
 
-    max-width: 420px;
+    max-width: none;
 
-    width: 100%;
+    width: 560px;
 
     height: auto;
 
@@ -425,11 +427,13 @@ body {
 
 #videoSection {
 
-    position: relative;
+    background:#0d0d0d;
 
-    width: var(--section-width);
+    padding:70px 0;
 
-    margin: 0 auto 70px auto;
+    margin-top:80px;
+
+    margin-bottom:80px;
 
 }
 
@@ -443,13 +447,15 @@ body {
 
     top: -38px;
 
-    right: 40px;
+    left: 120px;
 
     z-index: 5;
 
     display: block;
 
-    max-width: 340px;
+    width: 460px;
+
+    max-width: none;
 
     height: auto;
 
@@ -596,27 +602,6 @@ footer {
 
 }
 
-
-    #aboutSection .sectionRibbon,
-    #videoSection .sectionRibbon {
-
-        position: relative;
-
-        top: 0;
-
-        left: 0;
-
-        right: 0;
-
-        margin-bottom: 20px;
-
-    }
-
-    #aboutSection .infoPanel {
-
-        transform: none;
-
-    }
 
 }
 
