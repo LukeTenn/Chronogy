@@ -427,13 +427,15 @@ body {
 
 #videoSection {
 
-    background:#0d0d0d;
+    position: relative;
 
-    padding:70px 0;
+    background: #0d0d0d;
 
-    margin-top:80px;
+    padding: 70px 0;
 
-    margin-bottom:80px;
+    margin-top: 80px;
+
+    margin-bottom: 80px;
 
 }
 
@@ -445,9 +447,9 @@ body {
 
     position: absolute;
 
-    top: -38px;
+    top: -70px;
 
-    left: 120px;
+    left: -50px;
 
     z-index: 5;
 
@@ -587,26 +589,6 @@ footer {
 }
 
 @media (max-width: 700px) {
-
-    :root {
-
-        --nav-icon-width: 110px;
-
-    }
-
-    .navButton span {
-
-        font-size: 1rem;
-
-    }
-
-}
-
-
-}
-
-@media (max-width: 700px) {
-
 
     :root {
 
