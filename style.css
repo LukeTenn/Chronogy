@@ -43,23 +43,59 @@ body {
 }
 
 
+
 /*==================================================
     VARIABLES
 ==================================================*/
 
 :root {
 
+    /* Overall maximum width of the website */
+
     --page-width: 1895px;
+
+
+    /* Main content width
+
+       About box
+       Video row
+       Footer
+       Future page content
+
+       should all use this same width.
+    */
+
+    --content-width: 1380px;
+
+
+    /* Navigation */
 
     --nav-icon-width: 155px;
 
+
+    /* Dividers */
+
     --divider-spacing: 5px;
+
+
+    /* About textbox */
 
     --textbox-width: 1380px;
 
+
+    /* Individual video width */
+
     --video-width: 400px;
 
-    --download-width: 430px;
+
+    /* Download banner */
+
+    --download-width: 560px;
+
+
+    /* Decorative ribbons */
+
+    --ribbon-width: 460px;
 
 }
 
@@ -74,13 +110,23 @@ body {
     position: relative;
 
     width: 100%;
+
     max-width: var(--page-width);
 
     margin: 0 auto;
 
-    background-image: url("images/clocks-background.png");
+    background-image:
+        url("images/clocks-background.png");
+
     background-repeat: repeat-y;
+
     background-position: top center;
+
+    /*
+        The background follows the width of the page
+        instead of being independently stretched.
+    */
+
     background-size: 100% auto;
 
 }
@@ -125,7 +171,7 @@ body {
 
     padding: 12px 20px;
 
-    background: rgba(0,0,0,.45);
+    background: rgba(0, 0, 0, .45);
 
     border: 2px solid white;
 
@@ -141,7 +187,7 @@ body {
 
 .cornerButton:hover {
 
-    background: rgba(255,255,255,.18);
+    background: rgba(255, 255, 255, .18);
 
 }
 
@@ -160,17 +206,14 @@ body {
 
 
 /*==================================================
-    NAVIGATION
+    MAIN NAVIGATION
 ==================================================*/
 
 /*
-    IMPORTANT
-
-    The navigation intentionally DOES NOT sit
+    The navigation intentionally does not sit
     perfectly centered.
 
-    It follows the mockup.
-
+    The horizontal offset follows the mockup.
 */
 
 #mainNavigation {
@@ -195,6 +238,8 @@ body {
 
 
 
+/* Individual navigation button */
+
 .navButton {
 
     display: flex;
@@ -215,17 +260,19 @@ body {
 
 
 
+/* Navigation hover effect */
+
 .navButton:hover {
 
     transform:
-
         translateY(-6px)
-
         scale(1.05);
 
 }
 
 
+
+/* Navigation artwork */
 
 .navButton img {
 
@@ -239,6 +286,8 @@ body {
 
 
 
+/* Navigation text */
+
 .navButton span {
 
     margin-top: 10px;
@@ -250,7 +299,6 @@ body {
     letter-spacing: .05em;
 
     text-shadow:
-
         2px 2px 5px black;
 
 }
@@ -273,6 +321,8 @@ body {
 
 
 
+/* Divider artwork */
+
 .divider {
 
     display: block;
@@ -286,21 +336,32 @@ body {
 
 
 /*==================================================
-    PLACEHOLDER SECTIONS
-
-    These will receive their full styling
-    in Part 2.
+    SHARED CONTENT WIDTH
 ==================================================*/
 
+/*
+    These sections all use the same invisible
+    content grid.
+
+    This keeps the left and right edges aligned
+    throughout the homepage.
+*/
+
 #aboutSection,
-#downloadSection,
-#videoSection {
+#downloadSection {
 
-    width: var(--section-width);
+    width: var(--content-width);
 
-    margin: 0 auto 70px auto;
+    max-width: 100%;
+
+    margin-left: auto;
+
+    margin-right: auto;
 
 }
+
+
+
 /*==================================================
     ABOUT SECTION
 ==================================================*/
@@ -309,9 +370,9 @@ body {
 
     position: relative;
 
-    width: var(--section-width);
+    margin-top: 40px;
 
-    margin: 40px auto 70px auto;
+    margin-bottom: 70px;
 
 }
 
@@ -325,13 +386,13 @@ body {
 
     top: -38px;
 
-    left: 120px;
+    left: -50px;
 
     z-index: 5;
 
     display: block;
 
-    width: 460px;
+    width: var(--ribbon-width);
 
     max-width: none;
 
@@ -341,7 +402,7 @@ body {
 
 
 
-/* White information panel */
+/* About information panel */
 
 #aboutSection .infoPanel {
 
@@ -349,21 +410,30 @@ body {
 
     color: #222222;
 
-    width: 1380px;
+    width: var(--textbox-width);
+
+    max-width: 100%;
 
     min-height: 360px;
 
     padding: 65px 55px 45px;
 
-    margin: 0 auto;
+    margin-left: auto;
+
+    margin-right: auto;
 
     border-radius: 10px;
 
-    box-shadow: 0 14px 30px rgba(0,0,0,.35);
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, .35);
 
     transform: rotate(-1deg);
 
 }
+
+
+
+/* About heading */
 
 #aboutSection h2 {
 
@@ -372,6 +442,10 @@ body {
     color: #222222;
 
 }
+
+
+
+/* About paragraphs */
 
 #aboutSection p {
 
@@ -391,27 +465,35 @@ body {
 
     text-align: center;
 
-    margin: 60px auto 80px;
+    margin-top: 60px;
+
+    margin-bottom: 80px;
 
 }
+
+
+
+/* Download artwork */
 
 #downloadBanner {
 
     display: inline-block;
 
-    max-width: none;
+    width: var(--download-width);
 
-    width: 560px;
+    max-width: 100%;
 
     height: auto;
 
     transition:
-
         transform .2s ease,
-
         filter .2s ease;
 
 }
+
+
+
+/* Download hover effect */
 
 #downloadBanner:hover {
 
@@ -422,16 +504,29 @@ body {
 
 
 /*==================================================
-     SECTION
+    VIDEO SECTION
 ==================================================*/
+
+/*
+    The video section deliberately creates a
+    plain black area.
+
+    The clock background continues above and
+    below it because this is only the section's
+    own background.
+*/
 
 #videoSection {
 
     position: relative;
 
+    width: 100%;
+
     background: #0d0d0d;
 
-    padding: 70px 0;
+    padding-top: 70px;
+
+    padding-bottom: 70px;
 
     margin-top: 80px;
 
@@ -441,7 +536,17 @@ body {
 
 
 
-/* Videos ribbon */
+/*==================================================
+    VIDEOS RIBBON
+==================================================*/
+
+/*
+    The ribbon overlaps the top of the black
+    video section, matching the mockup.
+
+    It is positioned relative to #videoSection,
+    not the entire page.
+*/
 
 #videoSection .sectionRibbon {
 
@@ -449,13 +554,15 @@ body {
 
     top: -70px;
 
-    left: -50px;
+    left: calc(
+        (100% - var(--content-width)) / 2 - 50px
+    );
 
     z-index: 5;
 
     display: block;
 
-    width: 460px;
+    width: var(--ribbon-width);
 
     max-width: none;
 
@@ -465,7 +572,9 @@ body {
 
 
 
-/* Video grid */
+/*==================================================
+    VIDEO GRID
+==================================================*/
 
 #videoGrid {
 
@@ -477,22 +586,29 @@ body {
 
     gap: 40px;
 
-    margin-top: 60px;
+    width: var(--content-width);
 
-    width: 1380px;
+    max-width: 100%;
 
     margin-left: auto;
+
     margin-right: auto;
 
 }
 
 
 
-/* Placeholder until real YouTube videos */
+/*==================================================
+    VIDEO PLACEHOLDERS
+==================================================*/
 
 .videoPlaceholder {
 
-    width: 400px;
+    width: var(--video-width);
+
+    max-width: calc(
+        (100% - 80px) / 3
+    );
 
     aspect-ratio: 16 / 9;
 
@@ -506,7 +622,7 @@ body {
 
     align-items: center;
 
-    flex-shrink: 0;
+    flex-shrink: 1;
 
 }
 
@@ -518,29 +634,44 @@ body {
 
 footer {
 
-    background: rgba(25,25,25,.92);
+    background: rgba(25, 25, 25, .92);
 
-    padding: 45px 0 25px;
+    padding-top: 45px;
+
+    padding-bottom: 25px;
 
     margin-top: 60px;
 
 }
 
+
+
+/* Footer columns */
+
 .footerColumns {
 
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, 1fr);
 
     gap: 40px;
 
-    width: 1380px;
+    width: var(--content-width);
 
-    margin: 0 auto;
+    max-width: 100%;
+
+    margin-left: auto;
+
+    margin-right: auto;
 
     align-items: start;
 
 }
+
+
+
+/* Footer headings */
 
 .footerColumns h3 {
 
@@ -550,6 +681,10 @@ footer {
 
 }
 
+
+
+/* Footer paragraphs */
+
 .footerColumns p {
 
     margin-bottom: 8px;
@@ -558,13 +693,28 @@ footer {
 
 }
 
+
+
+/*==================================================
+    COPYRIGHT
+==================================================*/
+
 #copyright {
+
+    width: var(--content-width);
+
+    max-width: 100%;
 
     margin-top: 30px;
 
+    margin-left: auto;
+
+    margin-right: auto;
+
     padding-top: 20px;
 
-    border-top: 1px solid rgba(255,255,255,.25);
+    border-top:
+        1px solid rgba(255, 255, 255, .25);
 
     text-align: center;
 
@@ -578,6 +728,13 @@ footer {
     RESPONSIVE
 ==================================================*/
 
+/*
+    Medium screens
+
+    Keep the navigation somewhat smaller while
+    retaining the overall desktop design.
+*/
+
 @media (max-width: 1400px) {
 
     :root {
@@ -588,7 +745,43 @@ footer {
 
 }
 
-@media (max-width: 700px) {
+
+
+/*
+    Smaller screens
+
+    The video row becomes narrower while still
+    attempting to remain horizontal.
+*/
+
+@media (max-width: 1250px) {
+
+    #videoGrid {
+
+        gap: 20px;
+
+    }
+
+    .videoPlaceholder {
+
+        max-width:
+            calc((100% - 40px) / 3);
+
+    }
+
+}
+
+
+
+/*
+    Small screens
+
+    At this point the three videos are allowed
+    to stack rather than forcing them outside
+    the browser window.
+*/
+
+@media (max-width: 900px) {
 
     :root {
 
@@ -596,9 +789,67 @@ footer {
 
     }
 
+    #mainNavigation {
+
+        gap: 25px;
+
+        transform: translateX(0);
+
+    }
+
+    #videoGrid {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    .videoPlaceholder {
+
+        width: min(
+            var(--video-width),
+            100%
+        );
+
+        max-width: 100%;
+
+    }
+
+    #videoSection .sectionRibbon {
+
+        left: 20px;
+
+    }
+
+}
+
+
+
+/*
+    Very small screens
+*/
+
+@media (max-width: 700px) {
+
     .navButton span {
 
         font-size: 1rem;
+
+    }
+
+    #mainNavigation {
+
+        gap: 15px;
+
+    }
+
+    #aboutSection .infoPanel {
+
+        transform: none;
+
+        padding:
+            55px 30px 35px;
 
     }
 
