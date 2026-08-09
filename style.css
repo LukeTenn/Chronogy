@@ -395,12 +395,9 @@ body {
 
     top: -38px;
 
-    /*
-        Negative value lets the ribbon extend
-        toward the left edge like the mockup.
-    */
+    right: 0;
 
-    left: -50px;
+    left: auto;
 
     z-index: 5;
 
@@ -541,28 +538,30 @@ body {
     VIDEO SECTION
 ==================================================*/
 
-#videoSection {
+#videoSection .sectionRibbon {
 
-    position: relative;
+    position: absolute;
+
+    top: -70px;
 
     /*
-        Full-width black section.
-
-        The clock background continues outside
-        this section.
+        The video section spans the entire page,
+        so left: 0 anchors the ribbon directly
+        to the left edge of the site.
     */
 
-    width: 100%;
+    left: 0;
 
-    background: #0d0d0d;
+    z-index: 5;
 
-    padding-top: 70px;
+    display: block;
 
-    padding-bottom: 70px;
+    width:
+        var(--ribbon-width);
 
-    margin-top: 80px;
+    max-width: none;
 
-    margin-bottom: 80px;
+    height: auto;
 
 }
 
