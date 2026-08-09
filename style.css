@@ -379,21 +379,32 @@ body {
 
     position: relative;
 
-    margin-top: 40px;
+    /*
+        The section itself spans the entire page.
+        This allows the ribbon to reach the
+        actual right edge of the site.
+    */
 
-    margin-bottom: 70px;
+    width: 100%;
+
+    margin: 40px 0 70px 0;
 
 }
 
 
-
-/* About ribbon */
+/*==================================================
+    ABOUT RIBBON
+==================================================*/
 
 #aboutSection .sectionRibbon {
 
     position: absolute;
 
     top: -38px;
+
+    /*
+        RIGHT SIDE OF THE PAGE
+    */
 
     right: 0;
 
@@ -403,8 +414,7 @@ body {
 
     display: block;
 
-    width:
-        var(--ribbon-width);
+    width: var(--ribbon-width);
 
     max-width: none;
 
@@ -413,55 +423,38 @@ body {
 }
 
 
-
 /*==================================================
-    ABOUT INFORMATION BOX
+    ABOUT TEXT BOX
 ==================================================*/
 
 #aboutSection .infoPanel {
-
-    /*
-        Never wider than the section.
-    */
-
-    width: 100%;
-
-    max-width: 100%;
-
-    min-height: 360px;
-
-    padding:
-        65px 55px 45px;
-
-    margin-left: auto;
-
-    margin-right: auto;
 
     background: #F5F5F5;
 
     color: #222222;
 
+    /*
+        The textbox remains narrower than the
+        page and stays centered.
+    */
+
+    width: var(--content-width);
+
+    min-height: 360px;
+
+    padding: 65px 55px 45px;
+
+    margin: 0 auto;
+
     border-radius: 10px;
 
     box-shadow:
-        0 14px 30px
-        rgba(0, 0, 0, .35);
+        0 14px 30px rgba(0,0,0,.35);
 
-    /*
-        Temporary tilt.
-
-        We'll eventually replace this with
-        the actual Chronogy textbox artwork.
-    */
-
-    transform:
-        rotate(-1deg);
+    transform: rotate(-1deg);
 
 }
 
-
-
-/* About heading */
 
 #aboutSection h2 {
 
@@ -472,9 +465,6 @@ body {
 }
 
 
-
-/* About paragraphs */
-
 #aboutSection p {
 
     line-height: 1.75;
@@ -482,7 +472,6 @@ body {
     margin-bottom: 18px;
 
 }
-
 
 
 /*==================================================
@@ -542,6 +531,8 @@ body {
 
     position: absolute;
 
+    background: #0d0d0d;
+    
     top: -70px;
 
     /*
@@ -554,14 +545,19 @@ body {
 
     z-index: 5;
 
+    padding: 70px 0;
+
     display: block;
 
-    width:
-        var(--ribbon-width);
+    width: 100%;
 
     max-width: none;
 
     height: auto;
+
+    margin-top: 80px;
+    
+    margin-bottom: 80px;
 
 }
 
@@ -578,27 +574,18 @@ body {
     top: -70px;
 
     /*
-        Align the ribbon with the left edge of
-        the same content grid used elsewhere.
-
-        This keeps it attached to the video area
-        instead of the browser edge.
+        LEFT SIDE OF THE PAGE
     */
 
-    left:
-        max(
-            20px,
-            calc(
-                (100% - var(--content-width)) / 2 - 50px
-            )
-        );
+    left: 0;
+
+    right: auto;
 
     z-index: 5;
 
     display: block;
 
-    width:
-        var(--ribbon-width);
+    width: var(--ribbon-width);
 
     max-width: none;
 
