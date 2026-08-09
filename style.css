@@ -3,11 +3,13 @@
     Version 2.0
     style.css
 
-    This stylesheet is built directly from the
-    homepage mockup.
+    Homepage stylesheet based on the master mockup.
 
-    Future pages (Story, Guide, Music,
-    Development) will reuse this stylesheet.
+    Future pages:
+    Story
+    Guide
+    Music
+    Development
 ==================================================*/
 
 
@@ -20,6 +22,7 @@
 
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
 
 }
@@ -32,7 +35,10 @@ html {
 
 body {
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     color: white;
 
@@ -50,19 +56,16 @@ body {
 
 :root {
 
-    /* Overall maximum width of the website */
+    /* Maximum size of the entire site */
 
     --page-width: 1895px;
 
 
-    /* Main content width
+    /*
+        Main content width from the mockup.
 
-       About box
-       Video row
-       Footer
-       Future page content
-
-       should all use this same width.
+        This is a MAXIMUM width rather than a
+        mandatory fixed width.
     */
 
     --content-width: 1380px;
@@ -73,22 +76,12 @@ body {
     --nav-icon-width: 155px;
 
 
-    /* Dividers */
-
-    --divider-spacing: 5px;
-
-
-    /* About textbox */
-
-    --textbox-width: 1380px;
-
-
-    /* Individual video width */
+    /* Individual video */
 
     --video-width: 400px;
 
 
-    /* Download banner */
+    /* Download artwork */
 
     --download-width: 560px;
 
@@ -115,17 +108,16 @@ body {
 
     margin: 0 auto;
 
+    /*
+        Clock artwork remains a tiled texture.
+    */
+
     background-image:
         url("images/clocks-background.png");
 
     background-repeat: repeat-y;
 
     background-position: top center;
-
-    /*
-        The background follows the width of the page
-        instead of being independently stretched.
-    */
 
     background-size: 100% auto;
 
@@ -171,9 +163,11 @@ body {
 
     padding: 12px 20px;
 
-    background: rgba(0, 0, 0, .45);
+    background:
+        rgba(0, 0, 0, .45);
 
-    border: 2px solid white;
+    border:
+        2px solid white;
 
     color: white;
 
@@ -187,7 +181,8 @@ body {
 
 .cornerButton:hover {
 
-    background: rgba(255, 255, 255, .18);
+    background:
+        rgba(255, 255, 255, .18);
 
 }
 
@@ -209,13 +204,6 @@ body {
     MAIN NAVIGATION
 ==================================================*/
 
-/*
-    The navigation intentionally does not sit
-    perfectly centered.
-
-    The horizontal offset follows the mockup.
-*/
-
 #mainNavigation {
 
     display: flex;
@@ -224,9 +212,20 @@ body {
 
     align-items: flex-start;
 
+    /*
+        This spacing follows the mockup.
+    */
+
     gap: 65px;
 
-    transform: translateX(140px);
+    /*
+        The navigation intentionally sits toward
+        the right rather than being mathematically
+        centered.
+    */
+
+    transform:
+        translateX(140px);
 
     margin-top: -74px;
 
@@ -260,7 +259,7 @@ body {
 
 
 
-/* Navigation hover effect */
+/* Navigation hover */
 
 .navButton:hover {
 
@@ -276,7 +275,8 @@ body {
 
 .navButton img {
 
-    width: var(--nav-icon-width);
+    width:
+        var(--nav-icon-width);
 
     height: auto;
 
@@ -286,9 +286,11 @@ body {
 
 
 
-/* Navigation text */
+/* Navigation caption */
 
 .navButton span {
+
+    display: block;
 
     margin-top: 10px;
 
@@ -311,6 +313,8 @@ body {
 
 .dividerSection {
 
+    width: 100%;
+
     margin-top: -25px;
 
     margin-bottom: 34px;
@@ -318,10 +322,6 @@ body {
     text-align: center;
 
 }
-
-
-
-/* Divider artwork */
 
 .divider {
 
@@ -336,23 +336,32 @@ body {
 
 
 /*==================================================
-    SHARED CONTENT WIDTH
+    SHARED CONTENT CONTAINER
 ==================================================*/
 
 /*
-    These sections all use the same invisible
-    content grid.
+    This is the important part.
 
-    This keeps the left and right edges aligned
-    throughout the homepage.
+    The mockup uses a 1380px content area on
+    large screens.
+
+    However, the content is NEVER allowed to
+    become wider than the available browser.
+
+    This prevents the middle-monitor problem.
 */
 
 #aboutSection,
-#downloadSection {
+#downloadSection,
+#videoGrid,
+.footerColumns,
+#copyright {
 
-    width: var(--content-width);
-
-    max-width: 100%;
+    width:
+        min(
+            var(--content-width),
+            calc(100% - 60px)
+        );
 
     margin-left: auto;
 
@@ -386,13 +395,19 @@ body {
 
     top: -38px;
 
+    /*
+        Negative value lets the ribbon extend
+        toward the left edge like the mockup.
+    */
+
     left: -50px;
 
     z-index: 5;
 
     display: block;
 
-    width: var(--ribbon-width);
+    width:
+        var(--ribbon-width);
 
     max-width: none;
 
@@ -402,32 +417,48 @@ body {
 
 
 
-/* About information panel */
+/*==================================================
+    ABOUT INFORMATION BOX
+==================================================*/
 
 #aboutSection .infoPanel {
 
-    background: #F5F5F5;
+    /*
+        Never wider than the section.
+    */
 
-    color: #222222;
-
-    width: var(--textbox-width);
+    width: 100%;
 
     max-width: 100%;
 
     min-height: 360px;
 
-    padding: 65px 55px 45px;
+    padding:
+        65px 55px 45px;
 
     margin-left: auto;
 
     margin-right: auto;
 
+    background: #F5F5F5;
+
+    color: #222222;
+
     border-radius: 10px;
 
     box-shadow:
-        0 14px 30px rgba(0, 0, 0, .35);
+        0 14px 30px
+        rgba(0, 0, 0, .35);
 
-    transform: rotate(-1deg);
+    /*
+        Temporary tilt.
+
+        We'll eventually replace this with
+        the actual Chronogy textbox artwork.
+    */
+
+    transform:
+        rotate(-1deg);
 
 }
 
@@ -479,9 +510,11 @@ body {
 
     display: inline-block;
 
-    width: var(--download-width);
-
-    max-width: 100%;
+    width:
+        min(
+            var(--download-width),
+            100%
+        );
 
     height: auto;
 
@@ -493,11 +526,12 @@ body {
 
 
 
-/* Download hover effect */
+/* Download hover */
 
 #downloadBanner:hover {
 
-    transform: scale(1.04);
+    transform:
+        scale(1.04);
 
 }
 
@@ -507,18 +541,16 @@ body {
     VIDEO SECTION
 ==================================================*/
 
-/*
-    The video section deliberately creates a
-    plain black area.
-
-    The clock background continues above and
-    below it because this is only the section's
-    own background.
-*/
-
 #videoSection {
 
     position: relative;
+
+    /*
+        Full-width black section.
+
+        The clock background continues outside
+        this section.
+    */
 
     width: 100%;
 
@@ -540,29 +572,34 @@ body {
     VIDEOS RIBBON
 ==================================================*/
 
-/*
-    The ribbon overlaps the top of the black
-    video section, matching the mockup.
-
-    It is positioned relative to #videoSection,
-    not the entire page.
-*/
-
 #videoSection .sectionRibbon {
 
     position: absolute;
 
     top: -70px;
 
-    left: calc(
-        (100% - var(--content-width)) / 2 - 50px
-    );
+    /*
+        Align the ribbon with the left edge of
+        the same content grid used elsewhere.
+
+        This keeps it attached to the video area
+        instead of the browser edge.
+    */
+
+    left:
+        max(
+            20px,
+            calc(
+                (100% - var(--content-width)) / 2 - 50px
+            )
+        );
 
     z-index: 5;
 
     display: block;
 
-    width: var(--ribbon-width);
+    width:
+        var(--ribbon-width);
 
     max-width: none;
 
@@ -584,15 +621,20 @@ body {
 
     align-items: flex-start;
 
+    /*
+        Three videos:
+
+        400 + 400 + 400
+        plus two 40px gaps
+        = 1280px
+
+        This leaves room inside the 1380px
+        content area.
+    */
+
     gap: 40px;
 
-    width: var(--content-width);
-
-    max-width: 100%;
-
-    margin-left: auto;
-
-    margin-right: auto;
+    margin-top: 0;
 
 }
 
@@ -604,25 +646,34 @@ body {
 
 .videoPlaceholder {
 
-    width: var(--video-width);
+    /*
+        Allow the videos to shrink when necessary,
+        rather than forcing them off-screen.
+    */
 
-    max-width: calc(
-        (100% - 80px) / 3
-    );
+    flex:
+        1 1 0;
 
-    aspect-ratio: 16 / 9;
+    width:
+        var(--video-width);
+
+    max-width: 400px;
+
+    min-width: 0;
+
+    aspect-ratio:
+        16 / 9;
 
     background: #252525;
 
-    border: 3px solid #2CC8FF;
+    border:
+        3px solid #2CC8FF;
 
     display: flex;
 
     justify-content: center;
 
     align-items: center;
-
-    flex-shrink: 1;
 
 }
 
@@ -634,7 +685,10 @@ body {
 
 footer {
 
-    background: rgba(25, 25, 25, .92);
+    width: 100%;
+
+    background:
+        rgba(25, 25, 25, .92);
 
     padding-top: 45px;
 
@@ -646,24 +700,22 @@ footer {
 
 
 
-/* Footer columns */
+/*==================================================
+    FOOTER COLUMNS
+==================================================*/
 
 .footerColumns {
 
     display: grid;
 
+    /*
+        Four equal columns.
+    */
+
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4, minmax(0, 1fr));
 
     gap: 40px;
-
-    width: var(--content-width);
-
-    max-width: 100%;
-
-    margin-left: auto;
-
-    margin-right: auto;
 
     align-items: start;
 
@@ -701,20 +753,13 @@ footer {
 
 #copyright {
 
-    width: var(--content-width);
-
-    max-width: 100%;
-
     margin-top: 30px;
-
-    margin-left: auto;
-
-    margin-right: auto;
 
     padding-top: 20px;
 
     border-top:
-        1px solid rgba(255, 255, 255, .25);
+        1px solid
+        rgba(255, 255, 255, .25);
 
     text-align: center;
 
@@ -725,15 +770,8 @@ footer {
 
 
 /*==================================================
-    RESPONSIVE
+    RESPONSIVE: MEDIUM SCREENS
 ==================================================*/
-
-/*
-    Medium screens
-
-    Keep the navigation somewhat smaller while
-    retaining the overall desktop design.
-*/
 
 @media (max-width: 1400px) {
 
@@ -743,18 +781,40 @@ footer {
 
     }
 
-}
+
+    /*
+        Reduce the horizontal navigation offset
+        as the available width decreases.
+    */
+
+    #mainNavigation {
+
+        transform:
+            translateX(80px);
+
+    }
 
 
+    /*
+        Give the content a little less side
+        padding.
+    */
 
-/*
-    Smaller screens
+    #aboutSection,
+    #downloadSection,
+    #videoGrid,
+    .footerColumns,
+    #copyright {
 
-    The video row becomes narrower while still
-    attempting to remain horizontal.
-*/
+        width:
+            calc(100% - 40px);
 
-@media (max-width: 1250px) {
+    }
+
+
+    /*
+        Keep three videos side-by-side.
+    */
 
     #videoGrid {
 
@@ -762,10 +822,52 @@ footer {
 
     }
 
-    .videoPlaceholder {
+}
 
-        max-width:
-            calc((100% - 40px) / 3);
+
+
+/*==================================================
+    RESPONSIVE: SMALLER DESKTOP / TABLET
+==================================================*/
+
+@media (max-width: 1050px) {
+
+    /*
+        The navigation no longer receives the
+        large desktop offset.
+    */
+
+    #mainNavigation {
+
+        transform:
+            translateX(0);
+
+        gap: 30px;
+
+    }
+
+
+    /*
+        The ribbons become smaller so that they
+        don't dominate narrower screens.
+    */
+
+    #aboutSection .sectionRibbon,
+    #videoSection .sectionRibbon {
+
+        width: 380px;
+
+    }
+
+
+    /*
+        Three videos remain horizontal while
+        there is enough room.
+    */
+
+    #videoGrid {
+
+        gap: 15px;
 
     }
 
@@ -773,13 +875,9 @@ footer {
 
 
 
-/*
-    Small screens
-
-    At this point the three videos are allowed
-    to stack rather than forcing them outside
-    the browser window.
-*/
+/*==================================================
+    RESPONSIVE: TABLET
+==================================================*/
 
 @media (max-width: 900px) {
 
@@ -789,13 +887,23 @@ footer {
 
     }
 
+
+    /*
+        Navigation becomes more compact.
+    */
+
     #mainNavigation {
 
-        gap: 25px;
-
-        transform: translateX(0);
+        gap: 15px;
 
     }
+
+
+    /*
+        Videos may now stack vertically.
+
+        This prevents horizontal clipping.
+    */
 
     #videoGrid {
 
@@ -805,16 +913,41 @@ footer {
 
     }
 
+
     .videoPlaceholder {
 
-        width: min(
-            var(--video-width),
-            100%
-        );
+        width: 100%;
 
-        max-width: 100%;
+        max-width: 500px;
+
+        flex:
+            none;
 
     }
+
+
+    /*
+        Ribbons become smaller.
+    */
+
+    #aboutSection .sectionRibbon,
+    #videoSection .sectionRibbon {
+
+        width: 320px;
+
+    }
+
+
+    /*
+        Keep ribbons within the viewport.
+    */
+
+    #aboutSection .sectionRibbon {
+
+        left: -20px;
+
+    }
+
 
     #videoSection .sectionRibbon {
 
@@ -826,11 +959,22 @@ footer {
 
 
 
-/*
-    Very small screens
-*/
+/*==================================================
+    RESPONSIVE: MOBILE
+==================================================*/
 
 @media (max-width: 700px) {
+
+    /*
+        Navigation becomes compact.
+    */
+
+    #mainNavigation {
+
+        gap: 10px;
+
+    }
+
 
     .navButton span {
 
@@ -838,11 +982,11 @@ footer {
 
     }
 
-    #mainNavigation {
 
-        gap: 15px;
-
-    }
+    /*
+        About textbox loses its temporary rotation
+        on very small screens.
+    */
 
     #aboutSection .infoPanel {
 
@@ -850,6 +994,29 @@ footer {
 
         padding:
             55px 30px 35px;
+
+    }
+
+
+    /*
+        Smaller ribbons.
+    */
+
+    #aboutSection .sectionRibbon,
+    #videoSection .sectionRibbon {
+
+        width: 280px;
+
+    }
+
+
+    /*
+        Keep download artwork within the screen.
+    */
+
+    #downloadBanner {
+
+        width: 100%;
 
     }
 
