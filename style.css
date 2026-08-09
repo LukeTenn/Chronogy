@@ -406,9 +406,9 @@ body {
         RIGHT SIDE OF THE PAGE
     */
 
-    right: 0;
+    left: 0;
 
-    left: auto;
+    right: auto;
 
     z-index: 5;
 
@@ -527,40 +527,21 @@ body {
     VIDEO SECTION
 ==================================================*/
 
-#videoSection .sectionRibbon {
+#videoSection {
 
-    position: absolute;
-
-    background: #0d0d0d;
-    
-    top: -70px;
-
-    /*
-        The video section spans the entire page,
-        so left: 0 anchors the ribbon directly
-        to the left edge of the site.
-    */
-
-    left: 0;
-
-    z-index: 5;
-
-    padding: 70px 0;
-
-    display: block;
+    position: relative;
 
     width: 100%;
 
-    max-width: none;
+    background: #0d0d0d;
 
-    height: auto;
+    padding: 70px 0 80px;
 
     margin-top: 80px;
-    
+
     margin-bottom: 80px;
 
 }
-
 
 
 /*==================================================
@@ -571,17 +552,13 @@ body {
 
     position: absolute;
 
-    top: -70px;
+    top: -20px;
 
-    /*
-        LEFT SIDE OF THE PAGE
-    */
+    right: 0;
 
-    left: 0;
+    left: auto;
 
-    right: auto;
-
-    z-index: 5;
+    z-index: 10;
 
     display: block;
 
