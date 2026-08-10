@@ -403,7 +403,7 @@ body {
     top: -38px;
 
     /*
-        RIGHT SIDE OF THE PAGE
+        LEFT SIDE OF THE PAGE
     */
 
     left: 0;
@@ -918,7 +918,9 @@ footer {
 
     #videoSection .sectionRibbon {
 
-        left: 20px;
+        right: 0;
+
+        left: auto;
 
     }
 
