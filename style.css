@@ -531,16 +531,9 @@ body {
 
     position: relative;
 
-    width: 100%;
-
     background: #0d0d0d;
 
-    /*
-        More space at the top gives the videos
-        room to sit below the ribbon.
-    */
-
-    padding: 115px 0 80px;
+    padding: 85px 0 70px;
 
     margin-top: 80px;
 
@@ -559,20 +552,25 @@ body {
     position: absolute;
 
     /*
-        Raise the ribbon slightly.
+        The Videos ribbon belongs on the
+        RIGHT side of the video section.
     */
-
-    top: -45px;
 
     right: 0;
 
     left: auto;
 
+    /*
+        Slightly lower than before.
+    */
+
+    top: -55px;
+
     z-index: 10;
 
     display: block;
 
-    width: var(--ribbon-width);
+    width: 460px;
 
     max-width: none;
 
