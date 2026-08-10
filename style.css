@@ -564,9 +564,9 @@ body {
 
     top: -45px;
 
-    left: 0;
+    right: 0;
 
-    right: auto;
+    left: auto;
 
     z-index: 10;
 
