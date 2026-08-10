@@ -535,13 +535,19 @@ body {
 
     background: #0d0d0d;
 
-    padding: 70px 0 80px;
+    /*
+        More space at the top gives the videos
+        room to sit below the ribbon.
+    */
+
+    padding: 115px 0 80px;
 
     margin-top: 80px;
 
     margin-bottom: 80px;
 
 }
+
 
 
 /*==================================================
@@ -552,11 +558,15 @@ body {
 
     position: absolute;
 
-    top: -60px;
+    /*
+        Raise the ribbon slightly.
+    */
 
-    right: 0;
+    top: -45px;
 
-    left: auto;
+    left: 0;
+
+    right: auto;
 
     z-index: 10;
 
@@ -584,20 +594,14 @@ body {
 
     align-items: flex-start;
 
-    /*
-        Three videos:
-
-        400 + 400 + 400
-        plus two 40px gaps
-        = 1280px
-
-        This leaves room inside the 1380px
-        content area.
-    */
-
     gap: 40px;
 
-    margin-top: 0;
+    /*
+        The larger top padding on the video section
+        moves this row downward.
+    */
+
+    margin-top: 20px;
 
 }
 
@@ -681,6 +685,8 @@ footer {
     gap: 40px;
 
     align-items: start;
+
+    text-align: center;
 
 }
 
