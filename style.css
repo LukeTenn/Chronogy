@@ -311,9 +311,13 @@ body {
     DIVIDERS
 ==================================================*/
 
+/*
+    Bottom dividers remain normal sections.
+*/
+
 .dividerSection {
 
-    margin-top: -25px;
+    margin-top: 34px;
 
     margin-bottom: 34px;
 
@@ -322,30 +326,42 @@ body {
 }
 
 
-/*
-    TOP DIVIDER
+.divider {
 
-    This divider sits directly beneath the
-    navigation and is pulled upward so that
-    it crosses through the navigation icons.
-*/
+    display: block;
 
-#mainNavigation + .dividerSection {
+    width: 100%;
 
-    position: relative;
-
-    z-index: 30;
-
-    margin-top: -100px;
+    height: auto;
 
 }
 
 
-/*
-    Divider image
-*/
 
-.divider {
+/*==================================================
+    TOP NAVIGATION DIVIDER
+==================================================*/
+
+.topDivider {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 74px;
+
+    width: 100vw;
+
+    transform: translateX(-50%);
+
+    z-index: 30;
+
+    pointer-events: none;
+
+}
+
+
+.topDivider .divider {
 
     display: block;
 
