@@ -342,6 +342,14 @@ body {
     TOP NAVIGATION DIVIDER
 ==================================================*/
 
+/*
+    The divider sits directly between the hero
+    and the clock background.
+
+    It is positioned relative to the navigation
+    area so we can move it independently.
+*/
+
 .topDivider {
 
     position: absolute;
@@ -349,20 +357,25 @@ body {
     left: 50%;
 
     /*
-        Anchor the divider to the bottom of the
-        navigation rather than its top.
+        Adjust this number to move the divider
+        vertically.
 
-        A negative value moves it upward.
+        SMALLER number = HIGHER
+        LARGER number = LOWER
     */
 
-    bottom: 100px;
+    top: -45px;
 
-    width: 100vw;
+    width: 100%;
 
     transform:
         translateX(-50%);
 
-    z-index: 30;
+    /*
+        The navigation must appear ABOVE the divider.
+    */
+
+    z-index: 15;
 
     pointer-events: none;
 
