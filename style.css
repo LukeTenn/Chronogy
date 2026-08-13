@@ -348,11 +348,19 @@ body {
 
     left: 50%;
 
-    top: 25px;
+    /*
+        Anchor the divider to the bottom of the
+        navigation rather than its top.
+
+        A negative value moves it upward.
+    */
+
+    bottom: 60px;
 
     width: 100vw;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     z-index: 30;
 
