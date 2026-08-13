@@ -313,7 +313,7 @@ body {
 
 .dividerSection {
 
-    width: 100%;
+    position: relative;
 
     margin-top: -25px;
 
@@ -321,7 +321,11 @@ body {
 
     text-align: center;
 
+    z-index: 30;
+
 }
+
+
 
 .divider {
 
@@ -332,7 +336,6 @@ body {
     height: auto;
 
 }
-
 
 
 /*==================================================
