@@ -308,12 +308,10 @@ body {
 
 
 /*==================================================
-    DIVIDER
+    DIVIDERS
 ==================================================*/
 
 .dividerSection {
-
-    position: relative;
 
     margin-top: -25px;
 
@@ -321,11 +319,31 @@ body {
 
     text-align: center;
 
+}
+
+
+/*
+    TOP DIVIDER
+
+    This divider sits directly beneath the
+    navigation and is pulled upward so that
+    it crosses through the navigation icons.
+*/
+
+#mainNavigation + .dividerSection {
+
+    position: relative;
+
     z-index: 30;
+
+    margin-top: -100px;
 
 }
 
 
+/*
+    Divider image
+*/
 
 .divider {
 
