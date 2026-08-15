@@ -347,12 +347,8 @@ body {
     position: absolute;
 
     /*
-        The divider is positioned relative to
-        the navigation itself.
-
-        Increase this number to move the divider
-        DOWN.
-        Decrease it to move the divider UP.
+        This establishes the divider's general
+        vertical position relative to the navigation.
     */
 
     top: 95px;
@@ -361,10 +357,19 @@ body {
 
     width: 100vw;
 
-    transform: translateX(-50%);
+    /*
+        Move the divider independently upward.
+
+        X = keeps it centered.
+        Y = moves it upward without changing
+        the navigation's positioning.
+    */
+
+    transform:
+        translate(-50%, -15px);
 
     /*
-        Keep the divider BEHIND the navigation
+        The divider sits UNDER the navigation
         buttons.
     */
 
@@ -376,8 +381,7 @@ body {
 
 
 /*
-    Keep the actual navigation buttons above
-    the divider.
+    Navigation buttons remain ABOVE the divider.
 */
 
 .navButton {
