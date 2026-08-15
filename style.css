@@ -347,45 +347,44 @@ body {
     position: absolute;
 
     /*
-        Center horizontally within the navigation.
+        The divider is positioned relative to
+        the navigation itself.
+
+        Increase this number to move the divider
+        DOWN.
+        Decrease it to move the divider UP.
     */
+
+    top: 95px;
 
     left: 50%;
 
-    /*
-        Move the divider upward from the top
-        of the navigation.
-
-        More negative = higher
-        Less negative = lower
-    */
-
-    top: 15px;
-
     width: 100vw;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
     /*
-        Navigation buttons must appear ABOVE
-        the divider.
+        Keep the divider BEHIND the navigation
+        buttons.
     */
 
-    z-index: 15;
+    z-index: 1;
 
     pointer-events: none;
 
 }
 
 
-.topDivider .divider {
+/*
+    Keep the actual navigation buttons above
+    the divider.
+*/
 
-    display: block;
+.navButton {
 
-    width: 100%;
+    position: relative;
 
-    height: auto;
+    z-index: 2;
 
 }
 
