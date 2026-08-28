@@ -515,7 +515,51 @@ body {
     ABOUT TEXT BOX
 ==================================================*/
 
-#aboutSection h2 {
+/* The new textbox image */
+
+.aboutTextBox {
+
+    display: block;
+
+    width: var(--content-width);
+
+    height: auto;
+
+    margin: 0 auto;
+
+}
+
+
+/* Actual text placed over the textbox */
+
+.aboutText {
+
+    position: absolute;
+
+    top: 65px;
+
+    left: 50%;
+
+    width: var(--content-width);
+
+    transform: translateX(-50%);
+
+    padding: 0 55px;
+
+    color: #222222;
+
+    font-family:
+        "Paytone One",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    z-index: 4;
+
+}
+
+
+.aboutText h2 {
 
     margin-bottom: 22px;
 
@@ -524,7 +568,7 @@ body {
 }
 
 
-#aboutSection p {
+.aboutText p {
 
     line-height: 1.75;
 
