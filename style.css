@@ -159,7 +159,7 @@ body {
 
     position: absolute;
 
-    top: 18px;
+    top: 0px;
 
     display: block;
 
@@ -514,35 +514,6 @@ body {
 /*==================================================
     ABOUT TEXT BOX
 ==================================================*/
-
-#aboutSection .infoPanel {
-
-    background: #F5F5F5;
-
-    color: #222222;
-
-    /*
-        The textbox remains narrower than the
-        page and stays centered.
-    */
-
-    width: var(--content-width);
-
-    min-height: 360px;
-
-    padding: 65px 55px 45px;
-
-    margin: 0 auto;
-
-    border-radius: 10px;
-
-    box-shadow:
-        0 14px 30px rgba(0,0,0,.35);
-
-    transform: rotate(-1deg);
-
-}
-
 
 #aboutSection h2 {
 
