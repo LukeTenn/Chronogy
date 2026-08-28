@@ -13,6 +13,13 @@
 ==================================================*/
 
 
+/*==================================================
+    FONT
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+
 
 /*==================================================
     RESET
@@ -27,11 +34,13 @@
 
 }
 
+
 html {
 
     scroll-behavior: smooth;
 
 }
+
 
 body {
 
@@ -56,17 +65,12 @@ body {
 
 :root {
 
-    /* Maximum size of the entire site */
+    /* Maximum width of the entire site */
 
     --page-width: 1895px;
 
 
-    /*
-        Main content width from the mockup.
-
-        This is a MAXIMUM width rather than a
-        mandatory fixed width.
-    */
+    /* Main content width */
 
     --content-width: 1380px;
 
@@ -90,6 +94,11 @@ body {
 
     --ribbon-width: 460px;
 
+
+    /* About textbox artwork */
+
+    --textbox-width: 1380px;
+
 }
 
 
@@ -107,10 +116,6 @@ body {
     max-width: var(--page-width);
 
     margin: 0 auto;
-
-    /*
-        Clock artwork remains a tiled texture.
-    */
 
     background-image:
         url("images/clocks-background.png");
@@ -139,6 +144,7 @@ body {
 
 }
 
+
 #heroImage {
 
     display: block;
@@ -159,7 +165,7 @@ body {
 
     position: absolute;
 
-    top: 0px;
+    top: 0;
 
     display: block;
 
@@ -194,11 +200,11 @@ body {
 
     height: auto;
 
-    border: none;
-
     margin: 0;
 
     padding: 0;
+
+    border: none;
 
 }
 
@@ -221,13 +227,15 @@ body {
 }
 
 
-/* Hover effect */
+/* Hover */
 
 .cornerImage:hover {
 
-    transform: scale(1.04);
+    transform:
+        scale(1.04);
 
 }
+
 
 
 /*==================================================
@@ -242,16 +250,11 @@ body {
 
     align-items: flex-start;
 
-    /*
-        This spacing follows the mockup.
-    */
-
     gap: 65px;
 
     /*
-        The navigation intentionally sits toward
-        the right rather than being mathematically
-        centered.
+        The navigation follows the mockup and is
+        intentionally offset toward the right.
     */
 
     transform:
@@ -266,10 +269,13 @@ body {
 }
 
 
-
-/* Individual navigation button */
+/* Navigation buttons */
 
 .navButton {
+
+    position: relative;
+
+    z-index: 2;
 
     display: flex;
 
@@ -288,7 +294,6 @@ body {
 }
 
 
-
 /* Navigation hover */
 
 .navButton:hover {
@@ -300,20 +305,18 @@ body {
 }
 
 
-
 /* Navigation artwork */
 
 .navButton img {
+
+    display: block;
 
     width:
         var(--nav-icon-width);
 
     height: auto;
 
-    display: block;
-
 }
-
 
 
 /* Navigation caption */
@@ -340,10 +343,6 @@ body {
 /*==================================================
     DIVIDERS
 ==================================================*/
-
-/*
-    Bottom dividers remain normal sections.
-*/
 
 .dividerSection {
 
@@ -376,11 +375,6 @@ body {
 
     position: absolute;
 
-    /*
-        This establishes the divider's general
-        vertical position relative to the navigation.
-    */
-
     top: 25px;
 
     left: 50%;
@@ -388,18 +382,20 @@ body {
     width: 100vw;
 
     /*
-        Move the divider independently upward.
+        X keeps the divider centered.
 
-        X = keeps it centered.
-        Y = moves it upward without changing
-        the navigation's positioning.
+        The Y value controls the divider's vertical
+        position without moving the navigation.
+
+        A negative value moves it UP.
+        A positive value moves it DOWN.
     */
 
     transform:
         translate(-50%, 10px);
 
     /*
-        The divider sits UNDER the navigation
+        Keep the divider underneath the navigation
         buttons.
     */
 
@@ -410,36 +406,22 @@ body {
 }
 
 
-/*
-    Navigation buttons remain ABOVE the divider.
-*/
+.topDivider .divider {
 
-.navButton {
+    display: block;
 
-    position: relative;
+    width: 100%;
 
-    z-index: 2;
+    height: auto;
 
 }
+
 
 
 /*==================================================
     SHARED CONTENT CONTAINER
 ==================================================*/
 
-/*
-    This is the important part.
-
-    The mockup uses a 1380px content area on
-    large screens.
-
-    However, the content is NEVER allowed to
-    become wider than the available browser.
-
-    This prevents the middle-monitor problem.
-*/
-
-#aboutSection,
 #downloadSection,
 #videoGrid,
 .footerColumns,
@@ -468,16 +450,24 @@ body {
     position: relative;
 
     /*
-        The section itself spans the entire page.
-        This allows the ribbon to reach the
-        actual right edge of the site.
+        The section spans the entire page so the
+        About ribbon can touch the left edge.
     */
 
     width: 100%;
 
-    margin: 40px 0 70px 0;
+    margin:
+        40px 0 70px 0;
+
+    /*
+        Give the section enough vertical room for
+        the textbox artwork and text.
+    */
+
+    min-height: 430px;
 
 }
+
 
 
 /*==================================================
@@ -490,10 +480,6 @@ body {
 
     top: -38px;
 
-    /*
-        LEFT SIDE OF THE PAGE
-    */
-
     left: 0;
 
     right: auto;
@@ -502,13 +488,15 @@ body {
 
     display: block;
 
-    width: var(--ribbon-width);
+    width:
+        var(--ribbon-width);
 
     max-width: none;
 
     height: auto;
 
 }
+
 
 
 /*==================================================
@@ -520,18 +508,20 @@ body {
     position: absolute;
 
     /*
-        Center the artwork within the page.
+        Center the textbox artwork.
+
+        Because #aboutSection spans the entire page,
+        this centers it relative to the actual site.
     */
 
     left: 50%;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     /*
-        Vertical position of the textbox.
-
-        Increase this number to move it DOWN.
-        Decrease it to move it UP.
+        Move the textbox DOWN by increasing this
+        number.
     */
 
     top: 15px;
@@ -540,7 +530,11 @@ body {
         Size of the textbox artwork.
     */
 
-    width: 1380px;
+    width:
+        var(--textbox-width);
+
+    max-width:
+        calc(100% - 60px);
 
     height: auto;
 
@@ -549,6 +543,7 @@ body {
     z-index: 1;
 
 }
+
 
 
 /*==================================================
@@ -560,25 +555,30 @@ body {
     position: relative;
 
     /*
-        Same width as the textbox artwork.
+        Match the textbox artwork's width.
     */
 
-    width: 1380px;
+    width:
+        min(
+            var(--textbox-width),
+            calc(100% - 60px)
+        );
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
     /*
-        Move the text DOWN without moving
-        the textbox image.
+        Move the actual text DOWN independently
+        of the textbox image.
 
-        Increase this number to move the text down.
-        Decrease it to move the text up.
+        Increase this to move the text DOWN.
+        Decrease it to move the text UP.
     */
 
     padding-top: 75px;
 
     /*
-        Keep text away from the edges.
+        Keep text away from the textbox edges.
     */
 
     padding-left: 55px;
@@ -586,7 +586,7 @@ body {
     padding-right: 55px;
 
     /*
-        Text sits ABOVE the textbox artwork.
+        Text must appear above the textbox image.
     */
 
     z-index: 2;
@@ -602,6 +602,7 @@ body {
 }
 
 
+
 /*==================================================
     ABOUT TEXT HEADING
 ==================================================*/
@@ -613,15 +614,24 @@ body {
     color: #000000;
 
     /*
-        The first line/heading remains larger and
+        The heading is intentionally larger and
         bolder than the body text.
     */
+
+    font-family:
+        "Paytone One",
+        Arial,
+        Helvetica,
+        sans-serif;
 
     font-size: 1.5rem;
 
     font-weight: 700;
 
+    line-height: 1.25;
+
 }
+
 
 
 /*==================================================
@@ -630,17 +640,24 @@ body {
 
 .aboutText p {
 
-    line-height: 1.75;
-
     margin-bottom: 18px;
 
     color: #000000;
+
+    font-family:
+        "Paytone One",
+        Arial,
+        Helvetica,
+        sans-serif;
 
     font-size: 1rem;
 
     font-weight: 400;
 
+    line-height: 1.75;
+
 }
+
 
 
 /*==================================================
@@ -649,11 +666,18 @@ body {
 
 .aboutText .gameName {
 
-    font-weight: 700;
-
     color: #000000;
 
+    font-family:
+        "Paytone One",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-weight: 700;
+
 }
+
 
 
 /*==================================================
@@ -669,7 +693,6 @@ body {
     margin-bottom: 80px;
 
 }
-
 
 
 /* Download artwork */
@@ -693,7 +716,6 @@ body {
 }
 
 
-
 /* Download hover */
 
 #downloadBanner:hover {
@@ -715,7 +737,8 @@ body {
 
     background: #0d0d0d;
 
-    padding: 85px 0 70px;
+    padding:
+        85px 0 70px;
 
     margin-top: 80px;
 
@@ -734,8 +757,7 @@ body {
     position: absolute;
 
     /*
-        The Videos ribbon belongs on the
-        RIGHT side of the video section.
+        Videos ribbon belongs on the RIGHT side.
     */
 
     right: 0;
@@ -743,7 +765,10 @@ body {
     left: auto;
 
     /*
-        Slightly lower than before.
+        Vertical position of the ribbon.
+
+        Increase this number to move it DOWN.
+        Decrease it to move it UP.
     */
 
     top: -55px;
@@ -752,7 +777,8 @@ body {
 
     display: block;
 
-    width: 460px;
+    width:
+        var(--ribbon-width);
 
     max-width: none;
 
@@ -776,11 +802,6 @@ body {
 
     gap: 40px;
 
-    /*
-        The larger top padding on the video section
-        moves this row downward.
-    */
-
     margin-top: 20px;
 
 }
@@ -792,11 +813,6 @@ body {
 ==================================================*/
 
 .videoPlaceholder {
-
-    /*
-        Allow the videos to shrink when necessary,
-        rather than forcing them off-screen.
-    */
 
     flex:
         1 1 0;
@@ -855,10 +871,6 @@ footer {
 
     display: grid;
 
-    /*
-        Four equal columns.
-    */
-
     grid-template-columns:
         repeat(4, minmax(0, 1fr));
 
@@ -871,7 +883,6 @@ footer {
 }
 
 
-
 /* Footer headings */
 
 .footerColumns h3 {
@@ -881,7 +892,6 @@ footer {
     font-size: 1.15rem;
 
 }
-
 
 
 /* Footer paragraphs */
@@ -931,11 +941,6 @@ footer {
     }
 
 
-    /*
-        Reduce the horizontal navigation offset
-        as the available width decreases.
-    */
-
     #mainNavigation {
 
         transform:
@@ -944,12 +949,6 @@ footer {
     }
 
 
-    /*
-        Give the content a little less side
-        padding.
-    */
-
-    #aboutSection,
     #downloadSection,
     #videoGrid,
     .footerColumns,
@@ -960,10 +959,6 @@ footer {
 
     }
 
-
-    /*
-        Keep three videos side-by-side.
-    */
 
     #videoGrid {
 
@@ -981,11 +976,6 @@ footer {
 
 @media (max-width: 1050px) {
 
-    /*
-        The navigation no longer receives the
-        large desktop offset.
-    */
-
     #mainNavigation {
 
         transform:
@@ -996,11 +986,6 @@ footer {
     }
 
 
-    /*
-        The ribbons become smaller so that they
-        don't dominate narrower screens.
-    */
-
     #aboutSection .sectionRibbon,
     #videoSection .sectionRibbon {
 
@@ -1008,11 +993,6 @@ footer {
 
     }
 
-
-    /*
-        Three videos remain horizontal while
-        there is enough room.
-    */
 
     #videoGrid {
 
@@ -1037,22 +1017,12 @@ footer {
     }
 
 
-    /*
-        Navigation becomes more compact.
-    */
-
     #mainNavigation {
 
         gap: 15px;
 
     }
 
-
-    /*
-        Videos may now stack vertically.
-
-        This prevents horizontal clipping.
-    */
 
     #videoGrid {
 
@@ -1069,15 +1039,10 @@ footer {
 
         max-width: 500px;
 
-        flex:
-            none;
+        flex: none;
 
     }
 
-
-    /*
-        Ribbons become smaller.
-    */
 
     #aboutSection .sectionRibbon,
     #videoSection .sectionRibbon {
@@ -1088,21 +1053,47 @@ footer {
 
 
     /*
-        Keep ribbons within the viewport.
+        About ribbon remains attached to the left
+        edge of the page.
     */
 
     #aboutSection .sectionRibbon {
 
-        left: -20px;
+        left: 0;
 
     }
 
+
+    /*
+        Videos ribbon remains attached to the right
+        edge of the page.
+    */
 
     #videoSection .sectionRibbon {
 
         right: 0;
 
         left: auto;
+
+    }
+
+
+    /*
+        Scale the textbox down with the viewport.
+    */
+
+    .aboutTextBox {
+
+        width:
+            calc(100% - 40px);
+
+    }
+
+
+    .aboutText {
+
+        width:
+            calc(100% - 40px);
 
     }
 
@@ -1115,10 +1106,6 @@ footer {
 ==================================================*/
 
 @media (max-width: 700px) {
-
-    /*
-        Navigation becomes compact.
-    */
 
     #mainNavigation {
 
@@ -1135,16 +1122,31 @@ footer {
 
 
     /*
-        About textbox loses its temporary rotation
-        on very small screens.
+        Remove the textbox rotation behavior from
+        the old CSS. The textbox is now artwork.
     */
 
-    #aboutSection .infoPanel {
+    .aboutText {
 
-        transform: none;
+        padding-top: 55px;
 
-        padding:
-            55px 30px 35px;
+        padding-left: 30px;
+
+        padding-right: 30px;
+
+    }
+
+
+    .aboutText h2 {
+
+        font-size: 1.25rem;
+
+    }
+
+
+    .aboutText p {
+
+        font-size: .9rem;
 
     }
 
@@ -1162,7 +1164,28 @@ footer {
 
 
     /*
-        Keep download artwork within the screen.
+        Keep the ribbons attached to their proper
+        sides.
+    */
+
+    #aboutSection .sectionRibbon {
+
+        left: 0;
+
+    }
+
+
+    #videoSection .sectionRibbon {
+
+        right: 0;
+
+        left: auto;
+
+    }
+
+
+    /*
+        Keep download artwork inside the viewport.
     */
 
     #downloadBanner {
