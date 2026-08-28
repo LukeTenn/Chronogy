@@ -545,64 +545,6 @@ body {
 }
 
 
-
-/*==================================================
-    ABOUT TEXT
-==================================================*/
-
-.aboutText {
-
-    position: relative;
-
-    /*
-        Match the textbox artwork's width.
-    */
-
-    width:
-        min(
-            var(--textbox-width),
-            calc(100% - 60px)
-        );
-
-    margin:
-        0 auto;
-
-    /*
-        Move the actual text DOWN independently
-        of the textbox image.
-
-        Increase this to move the text DOWN.
-        Decrease it to move the text UP.
-    */
-
-    padding-top: 100px;
-
-    /*
-        Keep text away from the textbox edges.
-    */
-
-    padding-left: 60px;
-
-    padding-right: 55px;
-
-    /*
-        Text must appear above the textbox image.
-    */
-
-    z-index: 2;
-
-    color: #000000;
-
-    font-family:
-        "Paytone One",
-        Arial,
-        Helvetica,
-        sans-serif;
-
-}
-
-
-
 /*==================================================
     ABOUT TEXT
 ==================================================*/
@@ -620,16 +562,16 @@ body {
     margin: 0 auto;
 
     /*
-        Controls the position of the text inside
-        the textbox.
+        Controls the text position inside the
+        textbox artwork.
 
-        Increase this to move the text DOWN.
-        Decrease it to move the text UP.
+        Increase padding-top to move the text DOWN.
+        Increase padding-left to move the text RIGHT.
     */
 
-    padding-top: 75px;
+    padding-top: 90px;
 
-    padding-left: 55px;
+    padding-left: 70px;
 
     padding-right: 55px;
 
@@ -644,6 +586,7 @@ body {
         sans-serif;
 
 }
+
 
 
 /*==================================================
