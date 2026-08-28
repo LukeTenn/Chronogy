@@ -515,38 +515,98 @@ body {
     ABOUT TEXT BOX
 ==================================================*/
 
-/* The new textbox image */
+/*
+    The textbox is now an image.
+
+    It is positioned independently so that the
+    artwork can sit where the mockup intended,
+    while the actual text is layered on top.
+*/
 
 .aboutTextBox {
 
-    display: block;
+    position: absolute;
 
-    width: var(--content-width);
+    /*
+        Horizontal position.
+
+        50% places the CENTER of the image in the
+        center of the page.
+    */
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    /*
+        Move the textbox slightly downward.
+        Increase this number to move it farther down.
+    */
+
+    top: 10px;
+
+    /*
+        Size of the textbox artwork.
+
+        Change this number if the image itself
+        needs to be larger or smaller.
+    */
+
+    width: 1380px;
 
     height: auto;
 
-    margin: 0 auto;
+    z-index: 1;
 
 }
 
 
-/* Actual text placed over the textbox */
+/*==================================================
+    ABOUT TEXT
+==================================================*/
 
 .aboutText {
 
-    position: absolute;
+    position: relative;
 
-    top: 65px;
+    /*
+        This keeps the text centered inside the
+        same general area as the textbox image.
+    */
 
-    left: 50%;
+    width: 1380px;
 
-    width: var(--content-width);
+    margin: 0 auto;
 
-    transform: translateX(-50%);
+    /*
+        Push the text down into the textbox.
+        Increase this value to move ALL of the
+        text downward.
+    */
 
-    padding: 0 55px;
+    padding-top: 75px;
 
-    color: #222222;
+    /*
+        Horizontal padding keeps the text away
+        from the edges of the artwork.
+    */
+
+    padding-left: 55px;
+
+    padding-right: 55px;
+
+    /*
+        Text must appear above the textbox image.
+    */
+
+    z-index: 2;
+
+    /*
+        The textbox artwork is behind the text,
+        so the text itself needs to be black.
+    */
+
+    color: #000000;
 
     font-family:
         "Paytone One",
@@ -554,25 +614,59 @@ body {
         Helvetica,
         sans-serif;
 
-    z-index: 4;
-
 }
 
+
+/*==================================================
+    ABOUT TEXT HEADING
+==================================================*/
 
 .aboutText h2 {
 
     margin-bottom: 22px;
 
-    color: #222222;
+    color: #000000;
+
+    /*
+        The first line/heading remains larger and
+        bolder than the body text.
+    */
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
 
 }
 
+
+/*==================================================
+    ABOUT TEXT BODY
+==================================================*/
 
 .aboutText p {
 
     line-height: 1.75;
 
     margin-bottom: 18px;
+
+    color: #000000;
+
+    font-size: 1rem;
+
+    font-weight: 400;
+
+}
+
+
+/*==================================================
+    GAME NAME
+==================================================*/
+
+.aboutText .gameName {
+
+    font-weight: 700;
+
+    color: #000000;
 
 }
 
