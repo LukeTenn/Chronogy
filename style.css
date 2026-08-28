@@ -152,52 +152,82 @@ body {
 
 
 /*==================================================
-    TOP CORNER BUTTONS
+    TOP CORNER IMAGE LINKS
 ==================================================*/
 
-.cornerButton {
+.cornerImage {
 
     position: absolute;
 
     top: 18px;
 
-    padding: 12px 20px;
+    display: block;
 
-    background:
-        rgba(0, 0, 0, .45);
+    padding: 0;
 
-    border:
-        2px solid white;
+    margin: 0;
 
-    color: white;
+    border: none;
+
+    background: none;
 
     text-decoration: none;
 
-    border-radius: 8px;
+    line-height: 0;
 
-    transition: .25s;
+    z-index: 10;
+
+    transition:
+        transform .2s ease,
+        filter .2s ease;
+
+}
+
+
+/* Off Link artwork */
+
+.cornerImage img {
+
+    display: block;
+
+    width: 180px;
+
+    height: auto;
+
+    border: none;
+
+    margin: 0;
+
+    padding: 0;
 
 }
 
-.cornerButton:hover {
 
-    background:
-        rgba(255, 255, 255, .18);
-
-}
+/* Left corner */
 
 .leftCorner {
 
-    left: 24px;
+    left: 0;
 
 }
+
+
+/* Right corner */
 
 .rightCorner {
 
-    right: 24px;
+    right: 0;
 
 }
 
+
+/* Hover effect */
+
+.cornerImage:hover {
+
+    transform: scale(1.04);
+
+}
 
 
 /*==================================================
