@@ -512,26 +512,15 @@ body {
 
 
 /*==================================================
-    ABOUT TEXT BOX
+    ABOUT TEXT BOX IMAGE
 ==================================================*/
-
-/*
-    The textbox is now an image.
-
-    It is positioned independently so that the
-    artwork can sit where the mockup intended,
-    while the actual text is layered on top.
-*/
 
 .aboutTextBox {
 
     position: absolute;
 
     /*
-        Horizontal position.
-
-        50% places the CENTER of the image in the
-        center of the page.
+        Center the artwork within the page.
     */
 
     left: 50%;
@@ -539,22 +528,23 @@ body {
     transform: translateX(-50%);
 
     /*
-        Move the textbox slightly downward.
-        Increase this number to move it farther down.
+        Vertical position of the textbox.
+
+        Increase this number to move it DOWN.
+        Decrease it to move it UP.
     */
 
-    top: 10px;
+    top: 15px;
 
     /*
         Size of the textbox artwork.
-
-        Change this number if the image itself
-        needs to be larger or smaller.
     */
 
     width: 1380px;
 
     height: auto;
+
+    display: block;
 
     z-index: 1;
 
@@ -570,8 +560,7 @@ body {
     position: relative;
 
     /*
-        This keeps the text centered inside the
-        same general area as the textbox image.
+        Same width as the textbox artwork.
     */
 
     width: 1380px;
@@ -579,16 +568,17 @@ body {
     margin: 0 auto;
 
     /*
-        Push the text down into the textbox.
-        Increase this value to move ALL of the
-        text downward.
+        Move the text DOWN without moving
+        the textbox image.
+
+        Increase this number to move the text down.
+        Decrease it to move the text up.
     */
 
     padding-top: 75px;
 
     /*
-        Horizontal padding keeps the text away
-        from the edges of the artwork.
+        Keep text away from the edges.
     */
 
     padding-left: 55px;
@@ -596,15 +586,10 @@ body {
     padding-right: 55px;
 
     /*
-        Text must appear above the textbox image.
+        Text sits ABOVE the textbox artwork.
     */
 
     z-index: 2;
-
-    /*
-        The textbox artwork is behind the text,
-        so the text itself needs to be black.
-    */
 
     color: #000000;
 
