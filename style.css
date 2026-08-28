@@ -575,13 +575,13 @@ body {
         Decrease it to move the text UP.
     */
 
-    padding-top: 75px;
+    padding-top: 100px;
 
     /*
         Keep text away from the textbox edges.
     */
 
-    padding-left: 55px;
+    padding-left: 60px;
 
     padding-right: 55px;
 
