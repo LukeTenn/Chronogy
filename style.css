@@ -329,13 +329,19 @@ body {
 
     font-size: 1.18rem;
 
-    font-weight: bold;
+    font-weight: 400;
 
     letter-spacing: .05em;
 
     text-shadow:
         2px 2px 5px black;
 
+        font-family:
+        "Paytone One",
+        Arial,
+        Helvetica,
+        sans-serif;
+    
 }
 
 
@@ -610,7 +616,7 @@ body {
         and weight of the old heading.
     */
 
-    font-size: 3.2rem;
+    font-size: 2.3rem;
 
     font-weight: 700;
 
